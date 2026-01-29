@@ -177,10 +177,10 @@ body {
   margin-bottom: 3rem;
 }
 .hero-logo-wrap {
-  width: 120px;
-  height: 120px;
+  width: 72px;
+  height: 72px;
   margin: 0 auto 1.25rem;
-  padding: 0.6rem;
+  padding: 0.4rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -381,7 +381,7 @@ body {
   .term-nav-inner { padding: 0 1rem; }
   .term-tab { padding: 0.7rem 0.75rem; font-size: 0.75rem; }
   .hero-name { font-size: 1.4rem; }
-  .hero-logo-wrap { width: 100px; height: 100px; }
+  .hero-logo-wrap { width: 64px; height: 64px; }
   .infogrid { grid-template-columns: 1fr; }
   .box-row { flex-direction: column; align-items: flex-start; }
 }
