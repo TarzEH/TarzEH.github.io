@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none" stroke="#00F2FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- Cyber: hexagon -->
+  <path d="M60 16 L96 38 L96 82 L60 104 L24 82 L24 38 Z" />
+  <!-- AI: nodes + connections -->
+  <circle cx="60" cy="48" r="5" fill="#00F2FF" />
+  <circle cx="40" cy="68" r="4" fill="#00F2FF" />
+  <circle cx="80" cy="68" r="4" fill="#00F2FF" />
+  <circle cx="60" cy="88" r="4" fill="#00F2FF" />
+  <path d="M60 53 L45 65 M60 53 L75 65 M45 68 L55 86 M75 68 L65 86" />
+  <!-- Automation: gear ring (8 teeth) -->
+  <g transform="translate(60, 68)">
+    <circle r="20" fill="none" />
+    <line x1="0" y1="-20" x2="0" y2="-14" />
+    <line x1="14.1" y1="-14.1" x2="10" y2="-10" />
+    <line x1="20" y2="0" y1="0" x2="14" />
+    <line x1="14.1" y1="14.1" x2="10" y2="10" />
+    <line x1="0" y1="20" x2="0" y2="14" />
+    <line x1="-14.1" y1="14.1" x2="-10" y2="10" />
+    <line x1="-20" y2="0" y1="0" x2="-14" />
+    <line x1="-14.1" y1="-14.1" x2="-10" y2="-10" />
+  </g>
+</svg>
