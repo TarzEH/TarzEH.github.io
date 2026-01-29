@@ -204,10 +204,30 @@ body {
   color: var(--text);
 }
 .hero-tagline {
-  margin: 0 0 1.25rem;
+  margin: 0 0 0.75rem;
   font-family: var(--font-sans);
   font-size: 0.95rem;
   color: var(--text-muted);
+}
+.hero-contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+.hero-contact-link {
+  color: var(--accent-cyan);
+  text-decoration: none;
+}
+.hero-contact-link:hover { color: var(--accent-cyan-dim); }
+.hero-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
 }
 
 /* --- Buttons: sharp, rectangular, command-prompt style --- */
