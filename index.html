@@ -3,117 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#060608">
-  <title>Ori Ashkenazi | Cybersecurity & AI</title>
-  <meta name="description" content="Ori Ashkenazi — Cybersecurity & AI Consultant, Vulnerability Researcher, Instructor.">
+  <meta name="theme-color" content="#121212">
+  <title>Ori Ashkenazi | Linktree</title>
+  <meta name="description" content="Ori Ashkenazi — Cybersecurity & AI Consultant. Links to LinkedIn, GitHub, projects, writeups, scripts.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <nav class="nav">
-    <a href="#top" class="nav-logo">OA</a>
-    <a href="#info">Info</a>
-    <a href="#github">GitHub</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <main id="top">
-    <!-- Hero: photo + name in center -->
-    <section class="hero">
-      <div class="hero-photo-wrap">
-        <img src="profile.jpg" alt="Ori Ashkenazi" class="hero-photo" onerror="this.style.display='none'; this.nextElementSibling.classList.add('show');" onload="this.nextElementSibling.classList.remove('show');">
-        <div class="hero-photo-fallback">OA</div>
+  <main class="page">
+    <section class="profile">
+      <div class="profile-photo-wrap">
+        <img src="profile.jpg" alt="Ori Ashkenazi" class="profile-photo" onerror="this.style.display='none'; this.nextElementSibling.classList.add('show');" onload="this.nextElementSibling.classList.remove('show');">
+        <div class="profile-photo-fallback">OA</div>
       </div>
-      <h1 class="hero-name">Ori Ashkenazi</h1>
-      <p class="hero-title">Cybersecurity & AI Consultant · Vulnerability Researcher · Instructor</p>
-      <div class="hero-links">
-        <a href="https://www.linkedin.com/in/oria/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/TarzEH" target="_blank" rel="noopener">GitHub</a>
-      </div>
+      <h1 class="profile-name">Ori Ashkenazi</h1>
+      <p class="profile-bio">Cybersecurity & AI Consultant · Vulnerability Researcher · Instructor</p>
     </section>
 
-    <!-- Infographic: experience, education, certs -->
-    <section id="info" class="info">
-      <div class="info-grid">
-        <div class="info-block">
-          <span class="info-label">Experience</span>
-          <ul class="info-list">
-            <li><strong>Tech & Automation Consultant</strong> · Self-employed · 2026–</li>
-            <li><strong>AI Ops Engineer</strong> · Bank Hapoalim · 2026–</li>
-            <li><strong>Bug Hunter</strong> · Bugcrowd · 2025–</li>
-            <li><strong>Cyber Security Specialist</strong> · Cyberbit · 2024–25</li>
-          </ul>
-        </div>
-        <div class="info-block">
-          <span class="info-label">Education</span>
-          <ul class="info-list">
-            <li><strong>CISO & DPO</strong> · Bar-Ilan · 2024</li>
-            <li><strong>MBA & Economics</strong> · Ruppin · 2024–25</li>
-            <li><strong>BSc Computer Engineering</strong> · Ruppin · 2018–22</li>
-          </ul>
-        </div>
-        <div class="info-block">
-          <span class="info-label">Certifications</span>
-          <div class="info-badges">
-            <span>CISSP</span><span>CISM</span><span>CEH</span><span>AWS</span><span>INCD</span>
-            <span>Fortinet</span><span>DevSecOps</span><span>TDX Arena</span>
-          </div>
-        </div>
-      </div>
+    <section class="links">
+      <a href="https://www.linkedin.com/in/oria/" target="_blank" rel="noopener" class="link-btn">LinkedIn</a>
+      <a href="https://github.com/TarzEH" target="_blank" rel="noopener" class="link-btn">GitHub</a>
+      <a href="mailto:oriash94@gmail.com" class="link-btn">Email</a>
+      <a href="https://github.com/TarzEH?tab=repositories" target="_blank" rel="noopener" class="link-btn">All repositories</a>
+      <!-- Add more project links: copy the line below and change URL + text -->
+      <!-- <a href="https://github.com/TarzEH/your-repo" target="_blank" rel="noopener" class="link-btn">Project name</a> -->
+      <span class="link-btn link-btn-disabled">Writeups — coming soon</span>
+      <span class="link-btn link-btn-disabled">Scripts — coming soon</span>
     </section>
 
-    <!-- GitHub projects -->
-    <section id="github" class="github">
-      <h2 class="block-title">GitHub · Projects</h2>
-      <p class="block-desc">Repos & code. Add your project links below.</p>
-      <div class="link-list">
-        <a href="https://github.com/TarzEH?tab=repositories" target="_blank" rel="noopener" class="link-card">
-          <span class="link-icon">↗</span>
-          <span>All repositories</span>
-        </a>
-        <!-- Add more project links here, e.g.:
-        <a href="https://github.com/TarzEH/your-repo" target="_blank" rel="noopener" class="link-card">
-          <span class="link-icon">↗</span>
-          <span>your-repo</span>
-        </a>
-        -->
-      </div>
-    </section>
-
-    <!-- Writeups (add later) -->
-    <section id="writeups" class="writeups">
-      <h2 class="block-title">Writeups</h2>
-      <p class="block-desc">Labs, CTFs, notes. Coming soon.</p>
-      <div class="link-list link-list-placeholder">
-        <span class="placeholder">Add writeup links later</span>
-      </div>
-    </section>
-
-    <!-- Scripts (add later) -->
-    <section id="scripts" class="scripts">
-      <h2 class="block-title">Scripts</h2>
-      <p class="block-desc">Automation & pentesting. Coming soon.</p>
-      <div class="link-list link-list-placeholder">
-        <span class="placeholder">Add script links later</span>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="contact">
-      <h2 class="block-title">Contact</h2>
-      <div class="contact-row">
-        <a href="mailto:oriash94@gmail.com" class="contact-link">oriash94@gmail.com</a>
-        <a href="https://www.linkedin.com/in/oria/" target="_blank" rel="noopener" class="contact-link">LinkedIn</a>
-        <a href="https://github.com/TarzEH" target="_blank" rel="noopener" class="contact-link">GitHub</a>
-      </div>
-    </section>
+    <footer class="footer">
+      <p>© <span id="year"></span> Ori Ashkenazi</p>
+    </footer>
   </main>
-
-  <footer class="footer">
-    <p>© <span id="year"></span> Ori Ashkenazi</p>
-  </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
