@@ -87,31 +87,34 @@ body {
 .term-nav-inner {
   max-width: 720px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0.6rem 1.25rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 0;
+  justify-content: center;
+  gap: 0.25rem 0.5rem;
 }
 .term-tab {
   display: inline-block;
-  padding: 0.85rem 1rem;
+  padding: 0.5rem 0.75rem;
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.04em;
   color: var(--text-muted);
   text-decoration: none;
-  border: none;
-  border-bottom: var(--border-width) solid transparent;
-  transition: color 0.2s, border-color 0.2s, box-shadow 0.2s;
+  border: var(--border-width) solid transparent;
+  border-radius: 4px;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
 }
 .term-tab:hover {
   color: var(--accent-cyan);
+  border-color: var(--border);
+  background: var(--surface);
 }
 .term-tab-active {
   color: var(--accent-cyan);
-  border-bottom-color: var(--border-cyan);
-  box-shadow: 0 0 12px var(--glow-cyan);
+  border-color: var(--border-cyan);
+  background: rgba(0, 242, 255, 0.06);
 }
 
 /* --- Main content wrap --- */
@@ -204,25 +207,11 @@ body {
   color: var(--text);
 }
 .hero-tagline {
-  margin: 0 0 0.75rem;
+  margin: 0 0 1.25rem;
   font-family: var(--font-sans);
   font-size: 0.95rem;
   color: var(--text-muted);
 }
-.hero-contact {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 1.25rem;
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-}
-.hero-contact-link {
-  color: var(--accent-cyan);
-  text-decoration: none;
-}
-.hero-contact-link:hover { color: var(--accent-cyan-dim); }
 .hero-cta-row {
   display: flex;
   flex-wrap: wrap;
@@ -398,8 +387,8 @@ body {
 /* --- Mobile --- */
 @media (max-width: 600px) {
   .wrap { padding: 2rem 1rem 3rem; }
-  .term-nav-inner { padding: 0 1rem; }
-  .term-tab { padding: 0.7rem 0.75rem; font-size: 0.75rem; }
+  .term-nav-inner { padding: 0.5rem 1rem; gap: 0.2rem; }
+  .term-tab { padding: 0.4rem 0.55rem; font-size: 0.7rem; }
   .hero-name { font-size: 1.4rem; }
   .hero-logo-wrap { width: 64px; height: 64px; }
   .infogrid { grid-template-columns: 1fr; }
