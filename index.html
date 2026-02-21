@@ -13,9 +13,11 @@
 </head>
 <body>
 
+  <!-- Scanline + grain overlay -->
   <div class="scanline" aria-hidden="true"></div>
   <div class="grain" aria-hidden="true"></div>
 
+  <!-- Terminal-style nav -->
   <nav class="term-nav" id="top-nav">
     <div class="term-nav-inner">
       <a href="#index"       class="term-tab term-tab-active">[01] Index</a>
@@ -30,34 +32,54 @@
 
   <main class="wrap">
 
+    <!-- ═══════════════════════════════════════════
+         01 · HERO / INDEX
+    ═══════════════════════════════════════════ -->
     <header id="index" class="hero block">
       <div class="hero-logo-wrap">
         <img src="logo.png" alt="Ori Ashkenazi" class="hero-logo"
-             onerror="this.onerror=null; this.style.display='none'; document.getElementById('hero-initials' ).style.display='flex';">
+             onerror="this.onerror=null; this.style.display='none'; document.getElementById('hero-initials').style.display='flex';">
         <div class="hero-initials" id="hero-initials">OA</div>
       </div>
+
       <div class="hero-status">
         <span class="status-dot"></span>
         <span class="status-text">Available for engagements</span>
       </div>
+
       <h1 class="hero-name">Ori Ashkenazi</h1>
       <p class="hero-tagline">Cybersecurity &amp; AI Consultant &nbsp;·&nbsp; Vulnerability Researcher &nbsp;·&nbsp; Instructor</p>
       <p class="hero-sub">Founder &amp; Principal at <span class="accent-cyan">Ash</span> &nbsp;|&nbsp; Red Teaming &nbsp;·&nbsp; Secure AI &nbsp;·&nbsp; Cloud Security</p>
+
       <div class="hero-cta-row">
-        <a href="mailto:OriAshkenazi@cyberautomationai.cloud" class="btn btn-cta">Email</a>
-        <a href="https://wa.me/972523878716" class="btn btn-cta" target="_blank" rel="noopener">WhatsApp</a>
-        <a href="https://www.linkedin.com/in/oria/" class="btn btn-cta" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/TarzEH" class="btn btn-cta" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:OriAshkenazi@cyberautomationai.cloud"           class="btn btn-cta">Email</a>
+        <a href="https://wa.me/972523878716"           class="btn btn-cta" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://www.linkedin.com/in/oria/"    class="btn btn-cta" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/TarzEH"            class="btn btn-cta" target="_blank" rel="noopener">GitHub</a>
       </div>
     </header>
 
+    <!-- ═══════════════════════════════════════════
+         02 · ABOUT
+    ═══════════════════════════════════════════ -->
     <section id="about" class="block">
       <h2 class="block-title"><span class="block-num">02</span> About</h2>
       <div class="about-grid">
         <div class="about-text">
-          <p>I operate at the <span class="accent-cyan">strategic intersection of Red Teaming, Secure Cloud, and AI Automation</span>. Through my consultancy <strong>Ash</strong>, I bridge the gap between complex infrastructure and business efficiency by engineering digital resilience for enterprise-level organisations.</p>
-          <p>My work spans three core pillars: advanced adversarial simulations and vulnerability research; architecting autonomous, agentic AI workflows with robust governance frameworks; and deploying hardened cloud environments with secure, automated pipelines.</p>
-          <p>Beyond consulting, I hunt bugs on <span class="accent-green">Bugcrowd</span>, build open-source hacking tools, and teach cybersecurity and AI to the next generation of practitioners.</p>
+          <p>
+            I operate at the <span class="accent-cyan">strategic intersection of Red Teaming, Secure Cloud, and AI Automation</span>.
+            Through my consultancy <strong>Ash</strong>, I bridge the gap between complex infrastructure and business efficiency
+            by engineering digital resilience for enterprise-level organisations.
+          </p>
+          <p>
+            My work spans three core pillars: advanced adversarial simulations and vulnerability research;
+            architecting autonomous, agentic AI workflows with robust governance frameworks;
+            and deploying hardened cloud environments with secure, automated pipelines.
+          </p>
+          <p>
+            Beyond consulting, I hunt bugs on <span class="accent-green">Bugcrowd</span>, build open-source hacking tools,
+            and teach cybersecurity and AI to the next generation of practitioners.
+          </p>
         </div>
         <div class="about-stats">
           <div class="stat-item">
@@ -80,6 +102,9 @@
       </div>
     </section>
 
+    <!-- ═══════════════════════════════════════════
+         03 · SERVICES
+    ═══════════════════════════════════════════ -->
     <section id="services" class="block">
       <h2 class="block-title"><span class="block-num">03</span> Services</h2>
       <div class="infogrid">
@@ -116,6 +141,9 @@
       </div>
     </section>
 
+    <!-- ═══════════════════════════════════════════
+         04 · PROJECTS
+    ═══════════════════════════════════════════ -->
     <section id="projects" class="block">
       <h2 class="block-title"><span class="block-num">04</span> Projects</h2>
       <div class="project-grid">
@@ -126,7 +154,11 @@
             <span class="project-badge">v2.0.1</span>
           </div>
           <h3 class="project-name">MudaleTunnel</h3>
-          <p class="project-desc">A Python CLI + Web UI tool that automates SSH tunnel creation by running nmap scans, detecting open services, and generating <code>ssh -L</code> commands interactively. Supports local, dynamic, remote, and reverse tunnels with real-time health monitoring. Docker-ready.</p>
+          <p class="project-desc">
+            A Python CLI + Web UI tool that automates SSH tunnel creation by running nmap scans, detecting open services,
+            and generating <code>ssh -L</code> commands interactively. Supports local, dynamic, remote, and reverse tunnels
+            with real-time health monitoring. Docker-ready.
+          </p>
           <div class="project-tags">
             <span class="ptag">SSH Tunnelling</span>
             <span class="ptag">Nmap</span>
@@ -142,7 +174,10 @@
             <span class="project-tag">Ruby · TypeScript · Red Team</span>
           </div>
           <h3 class="project-name">CockpitMSF</h3>
-          <p class="project-desc">A Docker-based web UI layered on top of the Metasploit Framework, providing a modern C2 interface for penetration testers. Runs the full MSF stack — database, Metasploit, web UI, nginx — via Docker Compose.</p>
+          <p class="project-desc">
+            A Docker-based web UI layered on top of the Metasploit Framework, providing a modern C2 interface
+            for penetration testers. Runs the full MSF stack — database, Metasploit, web UI, nginx — via Docker Compose.
+          </p>
           <div class="project-tags">
             <span class="ptag">Metasploit</span>
             <span class="ptag">C2</span>
@@ -158,7 +193,10 @@
             <span class="project-badge">⭐ 2</span>
           </div>
           <h3 class="project-name">MIPS Compiler</h3>
-          <p class="project-desc">A compiler that translates Pascal syntax into MIPS assembly language using Bison and Flex. Implements full lexical analysis, syntax parsing, error detection, and MIPS code generation.</p>
+          <p class="project-desc">
+            A compiler that translates Pascal syntax into MIPS assembly language using Bison and Flex.
+            Implements full lexical analysis, syntax parsing, error detection, and MIPS code generation.
+          </p>
           <div class="project-tags">
             <span class="ptag">Pascal</span>
             <span class="ptag">MIPS Assembly</span>
@@ -168,12 +206,19 @@
           <span class="project-link">↗ View on GitHub</span>
         </a>
 
+
+
       </div>
       <div class="projects-more">
-        <a href="https://github.com/TarzEH?tab=repositories" target="_blank" rel="noopener" class="btn btn-outline">View all repositories ↗</a>
+        <a href="https://github.com/TarzEH?tab=repositories" target="_blank" rel="noopener" class="btn btn-outline">
+          View all repositories ↗
+        </a>
       </div>
     </section>
 
+    <!-- ═══════════════════════════════════════════
+         05 · EXPERIENCE
+    ═══════════════════════════════════════════ -->
     <section id="experience" class="block">
       <h2 class="block-title"><span class="block-num">05</span> Experience</h2>
       <div class="timeline">
@@ -187,7 +232,9 @@
             </div>
             <span class="tl-company">Ash · Freelance</span>
             <p class="tl-desc">Red Teaming, Secure AI Automation, and Cloud Security consultancy. Bridging high-level strategy with deep technical execution for enterprise clients.</p>
-            <div class="tl-tags"><span class="ptag">Red Team</span><span class="ptag">Secure AI</span><span class="ptag">Cloud Security</span></div>
+            <div class="tl-tags">
+              <span class="ptag">Red Team</span><span class="ptag">Secure AI</span><span class="ptag">Cloud Security</span>
+            </div>
           </div>
         </div>
 
@@ -200,7 +247,9 @@
             </div>
             <span class="tl-company">Bank Hapoalim · Full-time</span>
             <p class="tl-desc">Integrating AI and automation to improve existing processes and reduce SLA times. Leveraging LangGraph, LangChain, and agentic workflows to transform operational pipelines.</p>
-            <div class="tl-tags"><span class="ptag">AI/ML</span><span class="ptag">LangGraph</span><span class="ptag">Automation</span></div>
+            <div class="tl-tags">
+              <span class="ptag">AI/ML</span><span class="ptag">LangGraph</span><span class="ptag">Automation</span>
+            </div>
           </div>
         </div>
 
@@ -212,8 +261,10 @@
               <span class="tl-date">Jul 2025 – Present</span>
             </div>
             <span class="tl-company">Bugcrowd · Freelance</span>
-            <p class="tl-desc">Active vulnerability researcher on the Bugcrowd platform. Specialising in web application and API security, with CVE research experience (e.g. CVE-2024-45595 eval injection in D-Tale ).</p>
-            <div class="tl-tags"><span class="ptag">Bug Bounty</span><span class="ptag">CVE Research</span><span class="ptag">Web Security</span></div>
+            <p class="tl-desc">Active vulnerability researcher on the Bugcrowd platform. Specialising in web application and API security, with CVE research experience (e.g. CVE-2024-45595 eval injection in D-Tale).</p>
+            <div class="tl-tags">
+              <span class="ptag">Bug Bounty</span><span class="ptag">CVE Research</span><span class="ptag">Web Security</span>
+            </div>
           </div>
         </div>
 
@@ -226,7 +277,9 @@
             </div>
             <span class="tl-company">Cyberbit · Full-time</span>
             <p class="tl-desc">Security specialist at a leading cyber range and training platform. Conducted deep technical research including CVE analysis and offensive security demonstrations.</p>
-            <div class="tl-tags"><span class="ptag">Cyber Range</span><span class="ptag">Offensive Security</span><span class="ptag">Research</span></div>
+            <div class="tl-tags">
+              <span class="ptag">Cyber Range</span><span class="ptag">Offensive Security</span><span class="ptag">Research</span>
+            </div>
           </div>
         </div>
 
@@ -239,7 +292,9 @@
             </div>
             <span class="tl-company">Bank Hapoalim · Full-time · Tel Aviv (Hybrid)</span>
             <p class="tl-desc">Secured enterprise infrastructure, hardened environments, and implemented security controls across the bank's hybrid cloud footprint.</p>
-            <div class="tl-tags"><span class="ptag">Infrastructure</span><span class="ptag">Cloud Security</span><span class="ptag">Hardening</span></div>
+            <div class="tl-tags">
+              <span class="ptag">Infrastructure</span><span class="ptag">Cloud Security</span><span class="ptag">Hardening</span>
+            </div>
           </div>
         </div>
 
@@ -252,13 +307,18 @@
             </div>
             <span class="tl-company">Bank Hapoalim · Full-time</span>
             <p class="tl-desc">Designed and maintained CI/CD pipelines, containerised workloads, and automated operational processes to improve SLA and team efficiency.</p>
-            <div class="tl-tags"><span class="ptag">DevOps</span><span class="ptag">CI/CD</span><span class="ptag">Automation</span></div>
+            <div class="tl-tags">
+              <span class="ptag">DevOps</span><span class="ptag">CI/CD</span><span class="ptag">Automation</span>
+            </div>
           </div>
         </div>
 
       </div>
     </section>
 
+    <!-- ═══════════════════════════════════════════
+         06 · SKILLS
+    ═══════════════════════════════════════════ -->
     <section id="skills" class="block">
       <h2 class="block-title"><span class="block-num">06</span> Skills</h2>
       <div class="skills-grid">
@@ -266,58 +326,130 @@
         <div class="skill-group">
           <h3 class="skill-group-title">Offensive Security</h3>
           <div class="skill-bars">
-            <div class="skill-bar-item"><span class="skill-name">Red Team Operations</span><div class="skill-bar"><div class="skill-fill skill-fill-95"></div></div></div>
-            <div class="skill-bar-item"><span class="skill-name">Penetration Testing</span><div class="skill-bar"><div class="skill-fill skill-fill-90"></div></div></div>
-            <div class="skill-bar-item"><span class="skill-name">Vulnerability Research</span><div class="skill-bar"><div class="skill-fill skill-fill-88"></div></div></div>
-            <div class="skill-bar-item"><span class="skill-name">Bug Bounty Hunting</span><div class="skill-bar"><div class="skill-fill skill-fill-85"></div></div></div>
+            <div class="skill-bar-item">
+              <span class="skill-name">Red Team Operations</span>
+              <div class="skill-bar"><div class="skill-fill skill-fill-95"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <span class="skill-name">Penetration Testing</span>
+              <div class="skill-bar"><div class="skill-fill skill-fill-90"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <span class="skill-name">Vulnerability Research</span>
+              <div class="skill-bar"><div class="skill-fill skill-fill-88"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <span class="skill-name">Bug Bounty Hunting</span>
+              <div class="skill-bar"><div class="skill-fill skill-fill-85"></div></div>
+            </div>
           </div>
         </div>
 
         <div class="skill-group">
           <h3 class="skill-group-title">AI &amp; Automation</h3>
           <div class="skill-bars">
-            <div class="skill-bar-item"><span class="skill-name">AI Agent Design (LangGraph)</span><div class="skill-bar"><div class="skill-fill skill-fill-90"></div></div></div>
-            <div class="skill-bar-item"><span class="skill-name">LangChain / RAG</span><div class="skill-bar"><div class="skill-fill skill-fill-88"></div></div></div>
-            <div class="skill-bar-item"><span class="skill-name">Machine Learning (Python)</span><div class="skill-bar"><div class="skill-fill skill-fill-80"></div></div></div>
-            <div class="skill-bar-item"><span class="skill-name">Process Automation</span><div class="skill-bar"><div class="skill-fill skill-fill-92"></div></div></div>
+            <div class="skill-bar-item">
+              <span class="skill-name">AI Agent Design (LangGraph)</span>
+              <div class="skill-bar"><div class="skill-fill skill-fill-90"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <span class="skill-name">LangChain / RAG</span>
+              <div class="skill-bar"><div class="skill-fill skill-fill-88"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <span class="skill-name">Machine Learning (Python)</span>
+              <div class="skill-bar"><div class="skill-fill skill-fill-80"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <span class="skill-name">Process Automation</span>
+              <div class="skill-bar"><div class="skill-fill skill-fill-92"></div></div>
+            </div>
           </div>
         </div>
 
         <div class="skill-group">
           <h3 class="skill-group-title">Infrastructure &amp; Cloud</h3>
           <div class="skill-bars">
-            <div class="skill-bar-item"><span class="skill-name">Cloud Security</span><div class="skill-bar"><div class="skill-fill skill-fill-88"></div></div></div>
-            <div class="skill-bar-item"><span class="skill-name">DevOps / CI-CD</span><div class="skill-bar"><div class="skill-fill skill-fill-85"></div></div></div>
-            <div class="skill-bar-item"><span class="skill-name">Docker / Containers</span><div class="skill-bar"><div class="skill-fill skill-fill-90"></div></div></div>
-            <div class="skill-bar-item"><span class="skill-name">Linux / Networking</span><div class="skill-bar"><div class="skill-fill skill-fill-93"></div></div></div>
+            <div class="skill-bar-item">
+              <span class="skill-name">Cloud Security</span>
+              <div class="skill-bar"><div class="skill-fill skill-fill-88"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <span class="skill-name">DevOps / CI-CD</span>
+              <div class="skill-bar"><div class="skill-fill skill-fill-85"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <span class="skill-name">Docker / Containers</span>
+              <div class="skill-bar"><div class="skill-fill skill-fill-90"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <span class="skill-name">Linux / Networking</span>
+              <div class="skill-bar"><div class="skill-fill skill-fill-93"></div></div>
+            </div>
           </div>
         </div>
 
         <div class="skill-group">
           <h3 class="skill-group-title">Languages &amp; Tools</h3>
           <div class="skill-tags-wrap">
-            <span class="skill-chip">Python</span><span class="skill-chip">TypeScript</span><span class="skill-chip">C / C++</span>
-            <span class="skill-chip">Ruby</span><span class="skill-chip">PowerShell</span><span class="skill-chip">Bash</span>
-            <span class="skill-chip">Metasploit</span><span class="skill-chip">Nmap</span><span class="skill-chip">Burp Suite</span>
-            <span class="skill-chip">Docker</span><span class="skill-chip">Git</span><span class="skill-chip">JIRA</span>
+            <span class="skill-chip">Python</span>
+            <span class="skill-chip">TypeScript</span>
+            <span class="skill-chip">C / C++</span>
+            <span class="skill-chip">Ruby</span>
+            <span class="skill-chip">PowerShell</span>
+            <span class="skill-chip">Bash</span>
+            <span class="skill-chip">Metasploit</span>
+            <span class="skill-chip">Nmap</span>
+            <span class="skill-chip">Burp Suite</span>
+            <span class="skill-chip">Docker</span>
+            <span class="skill-chip">Git</span>
+            <span class="skill-chip">JIRA</span>
           </div>
         </div>
 
       </div>
 
+      <!-- Certifications -->
       <div class="certs-wrap">
         <h3 class="certs-title">Certifications <span class="certs-count">13+</span></h3>
         <div class="certs-grid">
-          <div class="cert-item"><span class="cert-icon">🛡</span><span class="cert-name">(ISC)² CISSP Bootcamp</span><span class="cert-issuer">ISC2</span></div>
-          <div class="cert-item"><span class="cert-icon">🛡</span><span class="cert-name">CISM Bootcamp</span><span class="cert-issuer">ISACA</span></div>
-          <div class="cert-item"><span class="cert-icon">🔐</span><span class="cert-name">INCD Cyber Defense Doctrine 2.0</span><span class="cert-issuer">INCD</span></div>
-          <div class="cert-item"><span class="cert-icon">💻</span><span class="cert-name">Zero2Hero C Programming</span><span class="cert-issuer">Low Level Academy</span></div>
-          <div class="cert-item"><span class="cert-icon">🤖</span><span class="cert-name">Machine Learning A-Z</span><span class="cert-issuer">Udemy</span></div>
-          <div class="cert-item cert-item-more"><span class="cert-icon">+</span><span class="cert-name">8 more certifications</span><a href="https://www.linkedin.com/in/oria/" target="_blank" rel="noopener" class="cert-link">View on LinkedIn ↗</a></div>
+          <div class="cert-item">
+            <span class="cert-icon">🛡</span>
+            <span class="cert-name">(ISC)² CISSP Bootcamp</span>
+            <span class="cert-issuer">ISC2</span>
+          </div>
+          <div class="cert-item">
+            <span class="cert-icon">🛡</span>
+            <span class="cert-name">CISM Bootcamp</span>
+            <span class="cert-issuer">ISACA</span>
+          </div>
+          <div class="cert-item">
+            <span class="cert-icon">🔐</span>
+            <span class="cert-name">INCD Cyber Defense Doctrine 2.0</span>
+            <span class="cert-issuer">INCD</span>
+          </div>
+          <div class="cert-item">
+            <span class="cert-icon">💻</span>
+            <span class="cert-name">Zero2Hero C Programming</span>
+            <span class="cert-issuer">Low Level Academy</span>
+          </div>
+          <div class="cert-item">
+            <span class="cert-icon">🤖</span>
+            <span class="cert-name">Machine Learning A-Z</span>
+            <span class="cert-issuer">Udemy</span>
+          </div>
+          <div class="cert-item cert-item-more">
+            <span class="cert-icon">+</span>
+            <span class="cert-name">8 more certifications</span>
+            <a href="https://www.linkedin.com/in/oria/" target="_blank" rel="noopener" class="cert-link">View on LinkedIn ↗</a>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- ═══════════════════════════════════════════
+         07 · CONTACT
+    ═══════════════════════════════════════════ -->
     <section id="contact" class="block">
       <h2 class="block-title"><span class="block-num">07</span> Contact</h2>
       <div class="contact-grid">
@@ -344,12 +476,12 @@
         <a href="https://outlook.office.com/bookwithme/user/043ec6fd4c0043119c10f02aee6901f9@cyberautomationai.cloud/meetingtype/jFJnhRFYfkaNAftX1qlc5A2?anonymous&ismsaljsauthenabled&ep=mLinkFromTile" target="_blank" rel="noopener" class="contact-card">
           <span class="contact-icon">📅</span>
           <span class="contact-label">Schedule a Meeting</span>
-          <span class="contact-val">Book a slot (English )</span>
+          <span class="contact-val">Book a slot (English)</span>
         </a>
         <a href="https://outlook.office.com/bookwithme/user/043ec6fd4c0043119c10f02aee6901f9@cyberautomationai.cloud/meetingtype/qx3cJaRmsUqmR2-VcLeZnQ2?anonymous&ismsaljsauthenabled&ep=mLinkFromTile" target="_blank" rel="noopener" class="contact-card">
           <span class="contact-icon">📅</span>
           <span class="contact-label">קביעת פגישה</span>
-          <span class="contact-val">לחץ לקביעת פגישה (עברית )</span>
+          <span class="contact-val">לחץ לקביעת פגישה (עברית)</span>
         </a>
       </div>
     </section>
@@ -364,26 +496,53 @@
   </main>
 
   <script>
+    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Active nav tab on scroll
     const sections = document.querySelectorAll('section[id], header[id]');
     const tabs = document.querySelectorAll('.term-tab');
+
     function updateActiveTab() {
       let current = '';
-      sections.forEach(sec => { if (sec.getBoundingClientRect().top <= 80) current = sec.getAttribute('id'); });
+      sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if (top <= 80) current = sec.getAttribute('id');
+      });
       tabs.forEach(tab => {
         tab.classList.remove('term-tab-active');
-        if (tab.getAttribute('href').replace('#','') === current) tab.classList.add('term-tab-active');
+        const href = tab.getAttribute('href').replace('#', '');
+        if (href === current) tab.classList.add('term-tab-active');
       });
     }
+
     window.addEventListener('scroll', updateActiveTab, { passive: true });
-    tabs.forEach(tab => tab.addEventListener('click', () => { tabs.forEach(t => t.classList.remove('term-tab-active')); tab.classList.add('term-tab-active'); }));
+
+    // Click nav tab
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('term-tab-active'));
+        tab.classList.add('term-tab-active');
+      });
+    });
+
+    // Animate skill bars on scroll into view
     const skillFills = document.querySelectorAll('.skill-fill');
     const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => { if (entry.isIntersecting) entry.target.style.width = entry.target.dataset.width; });
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.width = entry.target.dataset.width;
+        }
+      });
     }, { threshold: 0.1 });
+
     skillFills.forEach(fill => {
       const w = fill.className.match(/skill-fill-(\d+)/);
-      if (w) { fill.dataset.width = w[1] + '%'; fill.style.width = '0'; observer.observe(fill); }
+      if (w) {
+        fill.dataset.width = w[1] + '%';
+        fill.style.width = '0';
+        observer.observe(fill);
+      }
     });
   </script>
 </body>
