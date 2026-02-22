@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,8 +7,39 @@
   <meta name="description" content="Ori Ashkenazi — Cybersecurity, AI & Automation Consultant. Red Teaming, Secure AI, Cloud Infrastructure, Penetration Testing." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    html[lang="he"] body { font-family: 'Heebo', sans-serif; }
+    html[lang="he"] .section-title { font-family: 'Heebo', sans-serif; font-weight: 700; }
+    .lang-toggle {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; font-weight: 600; cursor: pointer;
+      background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+      color: var(--text-2); padding: 6px 14px; border-radius: 8px;
+      transition: all 0.2s; margin-left: 8px; letter-spacing: 0.03em;
+    }
+    html[dir="rtl"] .lang-toggle { margin-left: 0; margin-right: 8px; }
+    .lang-toggle:hover { background: rgba(255,255,255,0.12); color: var(--text); border-color: rgba(255,255,255,0.2); }
+    [data-he] { display: none; }
+    html[lang="he"] [data-en] { display: none; }
+    html[lang="he"] [data-he] { display: revert; }
+    html[lang="he"] span[data-he], html[lang="he"] a[data-he] { display: inline; }
+    html[lang="he"] div[data-he], html[lang="he"] p[data-he], html[lang="he"] h2[data-he],
+    html[lang="he"] h3[data-he], html[lang="he"] h4[data-he] { display: block; }
+    html[dir="rtl"] .about-grid { direction: rtl; }
+    html[dir="rtl"] .timeline { direction: rtl; }
+    html[dir="rtl"] .tl-head { flex-direction: row-reverse; }
+    html[dir="rtl"] .tl-item { flex-direction: row-reverse; }
+    html[dir="rtl"] .tl-marker { margin-left: 0; margin-right: 0; }
+    html[dir="rtl"] .nav-links { flex-direction: row-reverse; }
+    html[dir="rtl"] .hero-actions { flex-direction: row-reverse; }
+    html[dir="rtl"] .footer-inner { flex-direction: row-reverse; }
+    html[dir="rtl"] .about-links { flex-direction: row-reverse; }
+    html[dir="rtl"] .contact-card { flex-direction: row-reverse; text-align: right; }
+    html[dir="rtl"] .meeting-card { flex-direction: row-reverse; }
+    html[dir="rtl"] .meeting-arrow { transform: scaleX(-1); }
+  </style>
 </head>
 <body>
 
@@ -19,24 +50,37 @@
         <span class="nav-logo-name">Ori Ashkenazi</span>
       </a>
       <nav class="nav-links">
-        <a href="#about"      class="nav-link">About</a>
-        <a href="#services"   class="nav-link">Services</a>
-        <a href="#projects"   class="nav-link">Projects</a>
-        <a href="#experience" class="nav-link">Experience</a>
-        <a href="#skills"     class="nav-link">Skills</a>
-        <a href="#contact"    class="nav-cta">Let's Talk</a>
+        <a href="#about"      class="nav-link" data-en>About</a>
+        <a href="#about"      class="nav-link" data-he>אודות</a>
+        <a href="#services"   class="nav-link" data-en>Services</a>
+        <a href="#services"   class="nav-link" data-he>שירותים</a>
+        <a href="#projects"   class="nav-link" data-en>Projects</a>
+        <a href="#projects"   class="nav-link" data-he>פרויקטים</a>
+        <a href="#experience" class="nav-link" data-en>Experience</a>
+        <a href="#experience" class="nav-link" data-he>ניסיון</a>
+        <a href="#skills"     class="nav-link" data-en>Skills</a>
+        <a href="#skills"     class="nav-link" data-he>כישורים</a>
+        <a href="#contact"    class="nav-cta"  data-en>Let's Talk</a>
+        <a href="#contact"    class="nav-cta"  data-he>דברו איתי</a>
+        <button class="lang-toggle" id="lang-btn" aria-label="Switch language">🌐 עברית</button>
       </nav>
       <button class="nav-burger" id="burger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
     <div class="nav-mobile" id="mobile-menu">
-      <a href="#about"      class="nav-mobile-link">About</a>
-      <a href="#services"   class="nav-mobile-link">Services</a>
-      <a href="#projects"   class="nav-mobile-link">Projects</a>
-      <a href="#experience" class="nav-mobile-link">Experience</a>
-      <a href="#skills"     class="nav-mobile-link">Skills</a>
-      <a href="#contact"    class="nav-mobile-link nav-mobile-cta">Let's Talk</a>
+      <a href="#about"      class="nav-mobile-link" data-en>About</a>
+      <a href="#about"      class="nav-mobile-link" data-he>אודות</a>
+      <a href="#services"   class="nav-mobile-link" data-en>Services</a>
+      <a href="#services"   class="nav-mobile-link" data-he>שירותים</a>
+      <a href="#projects"   class="nav-mobile-link" data-en>Projects</a>
+      <a href="#projects"   class="nav-mobile-link" data-he>פרויקטים</a>
+      <a href="#experience" class="nav-mobile-link" data-en>Experience</a>
+      <a href="#experience" class="nav-mobile-link" data-he>ניסיון</a>
+      <a href="#skills"     class="nav-mobile-link" data-en>Skills</a>
+      <a href="#skills"     class="nav-mobile-link" data-he>כישורים</a>
+      <a href="#contact"    class="nav-mobile-link nav-mobile-cta" data-en>Let's Talk</a>
+      <a href="#contact"    class="nav-mobile-link nav-mobile-cta" data-he>דברו איתי</a>
     </div>
   </header>
 
@@ -49,34 +93,43 @@
     <div class="container hero-inner">
       <div class="hero-badge">
         <span class="badge-dot"></span>
-        Available for engagements
+        <span data-en>Available for engagements</span>
+        <span data-he>פתוח להתקשרויות חדשות</span>
       </div>
       <h1 class="hero-name">Ori Ashkenazi</h1>
-      <p class="hero-title">Cybersecurity &amp; AI Consultant</p>
-      <p class="hero-sub">Red Teaming · Secure AI · Cloud Security · Penetration Testing</p>
+      <p class="hero-title" data-en>Cybersecurity &amp; AI Consultant</p>
+      <p class="hero-title" data-he>יועץ סייבר ובינה מלאכותית</p>
+      <p class="hero-sub" data-en>Red Teaming · Secure AI · Cloud Security · Penetration Testing</p>
+      <p class="hero-sub" data-he>Red Team · AI מאובטח · אבטחת ענן · בדיקות חדירה</p>
       <div class="hero-actions">
-        <a href="#contact" class="btn btn-primary">Book a Meeting</a>
-        <a href="#projects" class="btn btn-ghost">View Work</a>
+        <a href="#contact" class="btn btn-primary" data-en>Book a Meeting</a>
+        <a href="#contact" class="btn btn-primary" data-he>קביעת פגישה</a>
+        <a href="#projects" class="btn btn-ghost" data-en>View Work</a>
+        <a href="#projects" class="btn btn-ghost" data-he>צפה בעבודות</a>
       </div>
       <div class="hero-stats">
         <div class="hero-stat">
           <span class="hero-stat-val">10+</span>
-          <span class="hero-stat-label">Years Experience</span>
+          <span class="hero-stat-label" data-en>Years Experience</span>
+          <span class="hero-stat-label" data-he>שנות ניסיון</span>
         </div>
         <div class="hero-stat-divider"></div>
         <div class="hero-stat">
           <span class="hero-stat-val">13+</span>
-          <span class="hero-stat-label">Certifications</span>
+          <span class="hero-stat-label" data-en>Certifications</span>
+          <span class="hero-stat-label" data-he>הסמכות</span>
         </div>
         <div class="hero-stat-divider"></div>
         <div class="hero-stat">
           <span class="hero-stat-val">3</span>
-          <span class="hero-stat-label">Core Pillars</span>
+          <span class="hero-stat-label" data-en>Core Pillars</span>
+          <span class="hero-stat-label" data-he>עמודי תווך</span>
         </div>
         <div class="hero-stat-divider"></div>
         <div class="hero-stat">
           <span class="hero-stat-val">500+</span>
-          <span class="hero-stat-label">LinkedIn Connections</span>
+          <span class="hero-stat-label" data-en>LinkedIn Connections</span>
+          <span class="hero-stat-label" data-he>קשרים בלינקדאין</span>
         </div>
       </div>
     </div>
@@ -88,13 +141,14 @@
   <!-- ABOUT -->
   <section class="section" id="about">
     <div class="container">
-      <div class="section-label">About</div>
+      <div class="section-label" data-en>About</div>
+      <div class="section-label" data-he>אודות</div>
       <div class="about-grid">
         <div class="about-logo-col">
-        <div class="about-initials-wrap">
-          <img src="profile_v2.png" alt="Ori Ashkenazi" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;" />
-          <div class="about-logo-glow"></div>
-        </div>
+          <div class="about-initials-wrap">
+            <img src="profile_v2.png" alt="Ori Ashkenazi" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;" />
+            <div class="about-logo-glow"></div>
+          </div>
           <div class="about-links">
             <a href="https://linkedin.com/in/oria" target="_blank" class="about-social-link">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
@@ -107,17 +161,27 @@
           </div>
         </div>
         <div class="about-text-col">
-          <h2 class="section-title">Building resilience at the intersection of security and intelligence.</h2>
-          <p class="about-p">I operate at the strategic intersection of Red Teaming, Secure Cloud, and AI Automation. Through my consultancy <strong>Ash</strong>, I bridge the gap between complex infrastructure and business efficiency by engineering digital resilience for enterprise-level organisations.</p>
-          <p class="about-p">My work spans three core pillars: advanced adversarial simulations and vulnerability research; architecting autonomous, agentic AI workflows with robust governance frameworks; and deploying hardened cloud environments with secure, automated pipelines.</p>
-          <p class="about-p">Beyond consulting, I hunt bugs on Bugcrowd, build open-source hacking tools, and teach cybersecurity and AI to the next generation of practitioners.</p>
+          <h2 class="section-title" data-en>Building resilience at the intersection of security and intelligence.</h2>
+          <h2 class="section-title" data-he>בונה חוסן בצומת שבין אבטחה לבינה מלאכותית.</h2>
+          <p class="about-p" data-en>I operate at the strategic intersection of Red Teaming, Secure Cloud, and AI Automation. Through my consultancy <strong>Ash</strong>, I bridge the gap between complex infrastructure and business efficiency by engineering digital resilience for enterprise-level organisations.</p>
+          <p class="about-p" data-he>אני פועל בצומת האסטרטגי של Red Teaming, ענן מאובטח ואוטומציית AI. דרך הייעוץ שלי <strong>Ash</strong>, אני מגשר על הפער בין תשתיות מורכבות לבין יעילות עסקית — ומהנדס חוסן דיגיטלי לארגונים ברמה ארגונית.</p>
+          <p class="about-p" data-en>My work spans three core pillars: advanced adversarial simulations and vulnerability research; architecting autonomous, agentic AI workflows with robust governance frameworks; and deploying hardened cloud environments with secure, automated pipelines.</p>
+          <p class="about-p" data-he>עבודתי נשענת על שלושה עמודי תווך: סימולציות תקיפה מתקדמות ומחקר פגיעויות; תכנון תהליכי AI אוטונומיים עם מסגרות ממשל חזקות; ופריסת סביבות ענן מוקשחות עם צינורות אוטומציה מאובטחים.</p>
+          <p class="about-p" data-en>Beyond consulting, I hunt bugs on Bugcrowd, build open-source hacking tools, and teach cybersecurity and AI to the next generation of practitioners.</p>
+          <p class="about-p" data-he>מעבר לייעוץ, אני צד בציד באגים ב-Bugcrowd, בונה כלי פריצה קוד-פתוח, ומלמד סייבר ו-AI לדור הבא של אנשי המקצוע.</p>
           <div class="about-tags">
-            <span class="tag">Red Teaming</span>
-            <span class="tag">Secure AI</span>
-            <span class="tag">Cloud Security</span>
-            <span class="tag">Penetration Testing</span>
-            <span class="tag">Bug Bounty</span>
-            <span class="tag">DevSecOps</span>
+            <span class="tag" data-en>Red Teaming</span>
+            <span class="tag" data-he>Red Teaming</span>
+            <span class="tag" data-en>Secure AI</span>
+            <span class="tag" data-he>AI מאובטח</span>
+            <span class="tag" data-en>Cloud Security</span>
+            <span class="tag" data-he>אבטחת ענן</span>
+            <span class="tag" data-en>Penetration Testing</span>
+            <span class="tag" data-he>בדיקות חדירה</span>
+            <span class="tag" data-en>Bug Bounty</span>
+            <span class="tag" data-he>Bug Bounty</span>
+            <span class="tag" data-en>DevSecOps</span>
+            <span class="tag" data-he>DevSecOps</span>
           </div>
         </div>
       </div>
@@ -127,51 +191,66 @@
   <!-- SERVICES -->
   <section class="section section-alt" id="services">
     <div class="container">
-      <div class="section-label">Services</div>
-      <h2 class="section-title">What I do</h2>
-      <p class="section-sub">End-to-end security and AI solutions for enterprises and growing organisations.</p>
+      <div class="section-label" data-en>Services</div>
+      <div class="section-label" data-he>שירותים</div>
+      <h2 class="section-title" data-en>What I do</h2>
+      <h2 class="section-title" data-he>מה אני עושה</h2>
+      <p class="section-sub" data-en>End-to-end security and AI solutions for enterprises and growing organisations.</p>
+      <p class="section-sub" data-he>פתרונות אבטחה ו-AI מקצה לקצה לארגונים גדולים וצומחים.</p>
       <div class="services-grid">
         <div class="service-card">
           <div class="service-icon service-icon-red">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
-          <h3 class="service-title">Red Team Operations</h3>
-          <p class="service-desc">Advanced adversarial simulations, purple team exercises, and vulnerability research for enterprise environments.</p>
+          <h3 class="service-title" data-en>Red Team Operations</h3>
+          <h3 class="service-title" data-he>מבצעי Red Team</h3>
+          <p class="service-desc" data-en>Advanced adversarial simulations, purple team exercises, and vulnerability research for enterprise environments.</p>
+          <p class="service-desc" data-he>סימולציות תקיפה מתקדמות, תרגילי Purple Team ומחקר פגיעויות לסביבות ארגוניות.</p>
         </div>
         <div class="service-card">
           <div class="service-icon service-icon-blue">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
           </div>
-          <h3 class="service-title">Secure AI &amp; Automation</h3>
-          <p class="service-desc">Architecting autonomous agentic workflows, AI governance frameworks, and intelligent automation pipelines.</p>
+          <h3 class="service-title" data-en>Secure AI &amp; Automation</h3>
+          <h3 class="service-title" data-he>AI מאובטח ואוטומציה</h3>
+          <p class="service-desc" data-en>Architecting autonomous agentic workflows, AI governance frameworks, and intelligent automation pipelines.</p>
+          <p class="service-desc" data-he>תכנון תהליכי AI אוטונומיים, מסגרות ממשל AI וצינורות אוטומציה חכמים.</p>
         </div>
         <div class="service-card">
           <div class="service-icon service-icon-teal">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
           </div>
-          <h3 class="service-title">Cloud Security</h3>
-          <p class="service-desc">Deploying hardened cloud environments, secure CI/CD pipelines, and automated infrastructure workflows.</p>
+          <h3 class="service-title" data-en>Cloud Security</h3>
+          <h3 class="service-title" data-he>אבטחת ענן</h3>
+          <p class="service-desc" data-en>Deploying hardened cloud environments, secure CI/CD pipelines, and automated infrastructure workflows.</p>
+          <p class="service-desc" data-he>פריסת סביבות ענן מוקשחות, צינורות CI/CD מאובטחים ותהליכי תשתית אוטומטיים.</p>
         </div>
         <div class="service-card">
           <div class="service-icon service-icon-purple">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
           </div>
-          <h3 class="service-title">Pentesting &amp; Bug Hunting</h3>
-          <p class="service-desc">Web, infrastructure, and API vulnerability research. Active Bugcrowd hunter with CVE research experience.</p>
+          <h3 class="service-title" data-en>Pentesting &amp; Bug Hunting</h3>
+          <h3 class="service-title" data-he>בדיקות חדירה וציד באגים</h3>
+          <p class="service-desc" data-en>Web, infrastructure, and API vulnerability research. Active Bugcrowd hunter with CVE research experience.</p>
+          <p class="service-desc" data-he>מחקר פגיעויות ב-Web, תשתיות ו-API. ציד פעיל ב-Bugcrowd עם ניסיון במחקר CVE.</p>
         </div>
         <div class="service-card">
           <div class="service-icon service-icon-orange">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
           </div>
-          <h3 class="service-title">DevSecOps &amp; Tooling</h3>
-          <p class="service-desc">Custom security tooling, OSINT automation, SSH tunnelling, and bespoke ops scripts for security teams.</p>
+          <h3 class="service-title" data-en>DevSecOps &amp; Tooling</h3>
+          <h3 class="service-title" data-he>DevSecOps וכלים</h3>
+          <p class="service-desc" data-en>Custom security tooling, OSINT automation, SSH tunnelling, and bespoke ops scripts for security teams.</p>
+          <p class="service-desc" data-he>כלי אבטחה מותאמים, אוטומציית OSINT, מנהרות SSH וסקריפטים ייעודיים לצוותי אבטחה.</p>
         </div>
         <div class="service-card">
           <div class="service-icon service-icon-green">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
           </div>
-          <h3 class="service-title">Workshops &amp; Training</h3>
-          <p class="service-desc">Cyber defence, AI integration, and offensive security training for teams and individuals.</p>
+          <h3 class="service-title" data-en>Workshops &amp; Training</h3>
+          <h3 class="service-title" data-he>סדנאות והדרכות</h3>
+          <p class="service-desc" data-en>Cyber defence, AI integration, and offensive security training for teams and individuals.</p>
+          <p class="service-desc" data-he>הדרכות הגנת סייבר, שילוב AI ואבטחה התקפית לצוותים ויחידים.</p>
         </div>
       </div>
     </div>
@@ -180,9 +259,12 @@
   <!-- PROJECTS -->
   <section class="section" id="projects">
     <div class="container">
-      <div class="section-label">Projects</div>
-      <h2 class="section-title">Open-source work</h2>
-      <p class="section-sub">Tools built for the security community — available on GitHub.</p>
+      <div class="section-label" data-en>Projects</div>
+      <div class="section-label" data-he>פרויקטים</div>
+      <h2 class="section-title" data-en>Open-source work</h2>
+      <h2 class="section-title" data-he>פרויקטי קוד פתוח</h2>
+      <p class="section-sub" data-en>Tools built for the security community — available on GitHub.</p>
+      <p class="section-sub" data-he>כלים שנבנו עבור קהילת הסייבר — זמינים ב-GitHub.</p>
       <div class="projects-grid">
 
         <a href="https://github.com/TarzEH/MudaleTunnel" target="_blank" class="project-card project-card-featured">
@@ -194,9 +276,11 @@
             <span class="project-badge">v2.0.1</span>
           </div>
           <h3 class="project-name">MudaleTunnel</h3>
-          <p class="project-desc">A Python CLI + Web UI tool that automates SSH tunnel creation — enabling secure port forwarding, dynamic SOCKS proxies, and remote access through firewalls with a clean interface.</p>
+          <p class="project-desc" data-en>A Python CLI tool that simplifies SSH tunnel creation by automating nmap scans to detect open services and interactively generating port-forwarding commands.</p>
+          <p class="project-desc" data-he>כלי Python CLI שמפשט יצירת מנהרות SSH על ידי אוטומציה של סריקות nmap לזיהוי שירותים פתוחים ויצירה אינטראקטיבית של פקודות העברת פורטים.</p>
           <div class="project-footer">
-            <span class="project-link-text">View on GitHub →</span>
+            <span class="project-link-text" data-en>View on GitHub →</span>
+            <span class="project-link-text" data-he>צפה ב-GitHub →</span>
           </div>
         </a>
 
@@ -208,9 +292,11 @@
             </div>
           </div>
           <h3 class="project-name">CockpitMSF</h3>
-          <p class="project-desc">A Docker-based web UI layered on top of the Metasploit Framework, providing a modern interface for red team operations and exploit management.</p>
+          <p class="project-desc" data-en>A Docker-based web UI layered on top of the Metasploit Framework, providing a modern interface for red team operations and exploit management.</p>
+          <p class="project-desc" data-he>ממשק ווב מבוסס Docker מעל Metasploit Framework, המספק ממשק מודרני לפעולות Red Team וניהול ניצולים.</p>
           <div class="project-footer">
-            <span class="project-link-text">View on GitHub →</span>
+            <span class="project-link-text" data-en>View on GitHub →</span>
+            <span class="project-link-text" data-he>צפה ב-GitHub →</span>
           </div>
         </a>
 
@@ -223,15 +309,18 @@
             <span class="project-stars">★ 2</span>
           </div>
           <h3 class="project-name">MIPS Compiler</h3>
-          <p class="project-desc">A compiler that translates Pascal syntax into MIPS assembly language using Lex and Yacc — demonstrating deep low-level systems programming expertise.</p>
+          <p class="project-desc" data-en>A compiler that translates Pascal syntax into MIPS assembly language using Lex and Yacc — demonstrating deep low-level systems programming expertise.</p>
+          <p class="project-desc" data-he>קומפיילר שמתרגם תחביר Pascal לשפת Assembly של MIPS באמצעות Lex ו-Yacc — המדגים מומחיות עמוקה בתכנות מערכות ברמה נמוכה.</p>
           <div class="project-footer">
-            <span class="project-link-text">View on GitHub →</span>
+            <span class="project-link-text" data-en>View on GitHub →</span>
+            <span class="project-link-text" data-he>צפה ב-GitHub →</span>
           </div>
         </a>
 
       </div>
       <div class="projects-more">
-        <a href="https://github.com/TarzEH" target="_blank" class="btn btn-outline">View all repositories →</a>
+        <a href="https://github.com/TarzEH" target="_blank" class="btn btn-outline" data-en>View all repositories →</a>
+        <a href="https://github.com/TarzEH" target="_blank" class="btn btn-outline" data-he>כל המאגרים →</a>
       </div>
     </div>
   </section>
@@ -239,8 +328,10 @@
   <!-- EXPERIENCE -->
   <section class="section section-alt" id="experience">
     <div class="container">
-      <div class="section-label">Experience</div>
-      <h2 class="section-title">Career timeline</h2>
+      <div class="section-label" data-en>Experience</div>
+      <div class="section-label" data-he>ניסיון</div>
+      <h2 class="section-title" data-en>Career timeline</h2>
+      <h2 class="section-title" data-he>ציר הקריירה</h2>
       <div class="timeline">
 
         <div class="tl-item">
@@ -248,16 +339,22 @@
           <div class="tl-body">
             <div class="tl-head">
               <div>
-                <h3 class="tl-role">Founder &amp; Principal Consultant</h3>
-                <span class="tl-company">Ash · Freelance</span>
+                <h3 class="tl-role" data-en>Founder &amp; Principal Consultant</h3>
+                <h3 class="tl-role" data-he>מייסד ויועץ ראשי</h3>
+                <span class="tl-company" data-en>Ash · Freelance</span>
+                <span class="tl-company" data-he>Ash · פרילנס</span>
               </div>
-              <span class="tl-date">Jan 2026 – Present</span>
+              <span class="tl-date" data-en>Jan 2026 – Present</span>
+              <span class="tl-date" data-he>ינואר 2026 – היום</span>
             </div>
-            <p class="tl-desc">Red Teaming, Secure AI Automation, and Cloud Security consultancy. Bridging high-level strategy with deep technical execution for enterprise clients.</p>
+            <p class="tl-desc" data-en>Red Teaming, Secure AI Automation, and Cloud Security consultancy. Bridging high-level strategy with deep technical execution for enterprise clients.</p>
+            <p class="tl-desc" data-he>ייעוץ בתחומי Red Teaming, אוטומציית AI מאובטחת ואבטחת ענן. גישור בין אסטרטגיה ברמה גבוהה לביצוע טכני עמוק עבור לקוחות ארגוניים.</p>
             <div class="tl-tags">
               <span class="tag tag-sm">Red Team</span>
-              <span class="tag tag-sm">Secure AI</span>
-              <span class="tag tag-sm">Cloud Security</span>
+              <span class="tag tag-sm" data-en>Secure AI</span>
+              <span class="tag tag-sm" data-he>AI מאובטח</span>
+              <span class="tag tag-sm" data-en>Cloud Security</span>
+              <span class="tag tag-sm" data-he>אבטחת ענן</span>
             </div>
           </div>
         </div>
@@ -267,16 +364,22 @@
           <div class="tl-body">
             <div class="tl-head">
               <div>
-                <h3 class="tl-role">AI Ops Engineer</h3>
-                <span class="tl-company">Bank Hapoalim · Full-time</span>
+                <h3 class="tl-role" data-en>AI Ops Engineer</h3>
+                <h3 class="tl-role" data-he>מהנדס AI Ops</h3>
+                <span class="tl-company" data-en>Bank Hapoalim · Full-time</span>
+                <span class="tl-company" data-he>בנק הפועלים · משרה מלאה</span>
               </div>
-              <span class="tl-date">Jan 2026 – Present</span>
+              <span class="tl-date" data-en>Jan 2026 – Present</span>
+              <span class="tl-date" data-he>ינואר 2026 – היום</span>
             </div>
-            <p class="tl-desc">Integrating AI and automation to improve existing processes and reduce SLA times. Leveraging agentic AI workflows and intelligent automation frameworks to transform operational pipelines.</p>
+            <p class="tl-desc" data-en>Integrating AI and automation to improve existing processes and reduce SLA times. Leveraging agentic AI workflows and intelligent automation frameworks to transform operational pipelines.</p>
+            <p class="tl-desc" data-he>שילוב AI ואוטומציה לשיפור תהליכים קיימים וקיצור זמני SLA. שימוש בתהליכי AI אגנטיים ומסגרות אוטומציה חכמות לשינוי צינורות תפעוליים.</p>
             <div class="tl-tags">
               <span class="tag tag-sm">AI/ML</span>
-              <span class="tag tag-sm">Agentic AI</span>
-              <span class="tag tag-sm">Automation</span>
+              <span class="tag tag-sm" data-en>Agentic AI</span>
+              <span class="tag tag-sm" data-he>AI אגנטי</span>
+              <span class="tag tag-sm" data-en>Automation</span>
+              <span class="tag tag-sm" data-he>אוטומציה</span>
             </div>
           </div>
         </div>
@@ -286,16 +389,22 @@
           <div class="tl-body">
             <div class="tl-head">
               <div>
-                <h3 class="tl-role">Bug Hunter</h3>
-                <span class="tl-company">Bugcrowd · Freelance</span>
+                <h3 class="tl-role" data-en>Bug Hunter</h3>
+                <h3 class="tl-role" data-he>ציד באגים</h3>
+                <span class="tl-company" data-en>Bugcrowd · Freelance</span>
+                <span class="tl-company" data-he>Bugcrowd · פרילנס</span>
               </div>
-              <span class="tl-date">Jul 2025 – Present</span>
+              <span class="tl-date" data-en>Jul 2025 – Present</span>
+              <span class="tl-date" data-he>יולי 2025 – היום</span>
             </div>
-            <p class="tl-desc">Active vulnerability researcher on the Bugcrowd platform. Specialising in web application and API security, with CVE research experience (e.g. CVE-2024-45595 eval injection in D-Tale).</p>
+            <p class="tl-desc" data-en>Active vulnerability researcher on the Bugcrowd platform. Specialising in web application and API security, with CVE research experience (e.g. CVE-2024-45595 eval injection in D-Tale).</p>
+            <p class="tl-desc" data-he>חוקר פגיעויות פעיל בפלטפורמת Bugcrowd. מתמחה באבטחת אפליקציות ווב ו-API, עם ניסיון במחקר CVE (לדוגמה: CVE-2024-45595 הזרקת eval ב-D-Tale).</p>
             <div class="tl-tags">
               <span class="tag tag-sm">Bug Bounty</span>
-              <span class="tag tag-sm">CVE Research</span>
-              <span class="tag tag-sm">Web Security</span>
+              <span class="tag tag-sm" data-en>CVE Research</span>
+              <span class="tag tag-sm" data-he>מחקר CVE</span>
+              <span class="tag tag-sm" data-en>Web Security</span>
+              <span class="tag tag-sm" data-he>אבטחת ווב</span>
             </div>
           </div>
         </div>
@@ -305,16 +414,23 @@
           <div class="tl-body">
             <div class="tl-head">
               <div>
-                <h3 class="tl-role">Cyber Security Specialist</h3>
-                <span class="tl-company">Cyberbit · Full-time</span>
+                <h3 class="tl-role" data-en>Cyber Security Specialist</h3>
+                <h3 class="tl-role" data-he>מומחה אבטחת סייבר</h3>
+                <span class="tl-company" data-en>Cyberbit · Full-time</span>
+                <span class="tl-company" data-he>Cyberbit · משרה מלאה</span>
               </div>
-              <span class="tl-date">Oct 2024 – Sep 2025</span>
+              <span class="tl-date" data-en>Oct 2024 – Sep 2025</span>
+              <span class="tl-date" data-he>אוקטובר 2024 – ספטמבר 2025</span>
             </div>
-            <p class="tl-desc">Security specialist at a leading cyber range and training platform. Conducted deep technical research including CVE analysis and offensive security demonstrations.</p>
+            <p class="tl-desc" data-en>Security specialist at a leading cyber range and training platform. Conducted deep technical research including CVE analysis and offensive security demonstrations.</p>
+            <p class="tl-desc" data-he>מומחה אבטחה בפלטפורמת אימון סייבר מובילה. ביצוע מחקר טכני מעמיק כולל ניתוח CVE והדגמות אבטחה התקפית.</p>
             <div class="tl-tags">
-              <span class="tag tag-sm">Cyber Range</span>
-              <span class="tag tag-sm">Offensive Security</span>
-              <span class="tag tag-sm">Research</span>
+              <span class="tag tag-sm" data-en>Cyber Range</span>
+              <span class="tag tag-sm" data-he>מגרש סייבר</span>
+              <span class="tag tag-sm" data-en>Offensive Security</span>
+              <span class="tag tag-sm" data-he>אבטחה התקפית</span>
+              <span class="tag tag-sm" data-en>Research</span>
+              <span class="tag tag-sm" data-he>מחקר</span>
             </div>
           </div>
         </div>
@@ -324,16 +440,23 @@
           <div class="tl-body">
             <div class="tl-head">
               <div>
-                <h3 class="tl-role">Infrastructure Security Engineer</h3>
-                <span class="tl-company">Bank Hapoalim · Full-time · Tel Aviv (Hybrid)</span>
+                <h3 class="tl-role" data-en>Infrastructure Security Engineer</h3>
+                <h3 class="tl-role" data-he>מהנדס אבטחת תשתיות</h3>
+                <span class="tl-company" data-en>Bank Hapoalim · Full-time · Tel Aviv (Hybrid)</span>
+                <span class="tl-company" data-he>בנק הפועלים · משרה מלאה · תל אביב (היברידי)</span>
               </div>
-              <span class="tl-date">Apr 2024 – Sep 2024</span>
+              <span class="tl-date" data-en>Apr 2024 – Sep 2024</span>
+              <span class="tl-date" data-he>אפריל 2024 – ספטמבר 2024</span>
             </div>
-            <p class="tl-desc">Secured enterprise infrastructure, hardened environments, and implemented security controls across the bank's hybrid cloud footprint.</p>
+            <p class="tl-desc" data-en>Secured enterprise infrastructure, hardened environments, and implemented security controls across the bank's hybrid cloud footprint.</p>
+            <p class="tl-desc" data-he>אבטחת תשתיות ארגוניות, הקשחת סביבות ויישום בקרות אבטחה על פני טביעת הרגל של הענן ההיברידי של הבנק.</p>
             <div class="tl-tags">
-              <span class="tag tag-sm">Infrastructure</span>
-              <span class="tag tag-sm">Cloud Security</span>
-              <span class="tag tag-sm">Hardening</span>
+              <span class="tag tag-sm" data-en>Infrastructure</span>
+              <span class="tag tag-sm" data-he>תשתיות</span>
+              <span class="tag tag-sm" data-en>Cloud Security</span>
+              <span class="tag tag-sm" data-he>אבטחת ענן</span>
+              <span class="tag tag-sm" data-en>Hardening</span>
+              <span class="tag tag-sm" data-he>הקשחה</span>
             </div>
           </div>
         </div>
@@ -343,16 +466,21 @@
           <div class="tl-body">
             <div class="tl-head">
               <div>
-                <h3 class="tl-role">DevOps Engineer</h3>
-                <span class="tl-company">Bank Hapoalim · Full-time</span>
+                <h3 class="tl-role" data-en>DevOps Engineer</h3>
+                <h3 class="tl-role" data-he>מהנדס DevOps</h3>
+                <span class="tl-company" data-en>Bank Hapoalim · Full-time</span>
+                <span class="tl-company" data-he>בנק הפועלים · משרה מלאה</span>
               </div>
-              <span class="tl-date">May 2023 – Apr 2024</span>
+              <span class="tl-date" data-en>May 2023 – Apr 2024</span>
+              <span class="tl-date" data-he>מאי 2023 – אפריל 2024</span>
             </div>
-            <p class="tl-desc">Designed and maintained CI/CD pipelines, containerised workloads, and automated operational processes to improve SLA and team efficiency.</p>
+            <p class="tl-desc" data-en>Designed and maintained CI/CD pipelines, containerised workloads, and automated operational processes to improve SLA and team efficiency.</p>
+            <p class="tl-desc" data-he>תכנון ותחזוקה של צינורות CI/CD, עומסי עבודה מכולות ותהליכים תפעוליים אוטומטיים לשיפור SLA ויעילות הצוות.</p>
             <div class="tl-tags">
               <span class="tag tag-sm">DevOps</span>
               <span class="tag tag-sm">CI/CD</span>
-              <span class="tag tag-sm">Automation</span>
+              <span class="tag tag-sm" data-en>Automation</span>
+              <span class="tag tag-sm" data-he>אוטומציה</span>
             </div>
           </div>
         </div>
@@ -364,39 +492,93 @@
   <!-- SKILLS -->
   <section class="section" id="skills">
     <div class="container">
-      <div class="section-label">Skills</div>
-      <h2 class="section-title">Expertise &amp; Certifications</h2>
+      <div class="section-label" data-en>Skills</div>
+      <div class="section-label" data-he>כישורים</div>
+      <h2 class="section-title" data-en>Expertise &amp; Certifications</h2>
+      <h2 class="section-title" data-he>מומחיות והסמכות</h2>
 
       <div class="skills-grid">
         <div class="skill-group">
-          <h4 class="skill-group-title">Offensive Security</h4>
+          <h4 class="skill-group-title" data-en>Offensive Security</h4>
+          <h4 class="skill-group-title" data-he>אבטחה התקפית</h4>
           <div class="skill-bars">
-            <div class="skill-bar-item"><span class="skill-name">Red Team Operations</span><div class="skill-track"><div class="skill-fill skill-fill-95"></div></div></div>
-            <div class="skill-bar-item"><span class="skill-name">Penetration Testing</span><div class="skill-track"><div class="skill-fill skill-fill-92"></div></div></div>
-            <div class="skill-bar-item"><span class="skill-name">Vulnerability Research</span><div class="skill-track"><div class="skill-fill skill-fill-88"></div></div></div>
-            <div class="skill-bar-item"><span class="skill-name">Bug Bounty Hunting</span><div class="skill-track"><div class="skill-fill skill-fill-85"></div></div></div>
+            <div class="skill-bar-item">
+              <span class="skill-name" data-en>Red Team Operations</span>
+              <span class="skill-name" data-he>מבצעי Red Team</span>
+              <div class="skill-track"><div class="skill-fill skill-fill-95"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <span class="skill-name" data-en>Penetration Testing</span>
+              <span class="skill-name" data-he>בדיקות חדירה</span>
+              <div class="skill-track"><div class="skill-fill skill-fill-92"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <span class="skill-name" data-en>Vulnerability Research</span>
+              <span class="skill-name" data-he>מחקר פגיעויות</span>
+              <div class="skill-track"><div class="skill-fill skill-fill-88"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <span class="skill-name" data-en>Bug Bounty Hunting</span>
+              <span class="skill-name" data-he>ציד באגים</span>
+              <div class="skill-track"><div class="skill-fill skill-fill-85"></div></div>
+            </div>
           </div>
         </div>
         <div class="skill-group">
-          <h4 class="skill-group-title">AI &amp; Automation</h4>
+          <h4 class="skill-group-title" data-en>AI &amp; Automation</h4>
+          <h4 class="skill-group-title" data-he>AI ואוטומציה</h4>
           <div class="skill-bars">
-            <div class="skill-bar-item"><span class="skill-name">AI Agent Design</span><div class="skill-track"><div class="skill-fill skill-fill-90"></div></div></div>
-            <div class="skill-bar-item"><span class="skill-name">Retrieval-Augmented Generation</span><div class="skill-track"><div class="skill-fill skill-fill-88"></div></div></div>
-            <div class="skill-bar-item"><span class="skill-name">Machine Learning (Python)</span><div class="skill-track"><div class="skill-fill skill-fill-80"></div></div></div>
-            <div class="skill-bar-item"><span class="skill-name">Process Automation</span><div class="skill-track"><div class="skill-fill skill-fill-93"></div></div></div>
+            <div class="skill-bar-item">
+              <span class="skill-name" data-en>AI Agent Design</span>
+              <span class="skill-name" data-he>תכנון סוכני AI</span>
+              <div class="skill-track"><div class="skill-fill skill-fill-90"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <span class="skill-name" data-en>Retrieval-Augmented Generation</span>
+              <span class="skill-name" data-he>יצירה מוגברת אחזור (RAG)</span>
+              <div class="skill-track"><div class="skill-fill skill-fill-88"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <span class="skill-name" data-en>Machine Learning (Python)</span>
+              <span class="skill-name" data-he>למידת מכונה (Python)</span>
+              <div class="skill-track"><div class="skill-fill skill-fill-80"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <span class="skill-name" data-en>Process Automation</span>
+              <span class="skill-name" data-he>אוטומציית תהליכים</span>
+              <div class="skill-track"><div class="skill-fill skill-fill-93"></div></div>
+            </div>
           </div>
         </div>
         <div class="skill-group">
-          <h4 class="skill-group-title">Infrastructure &amp; Cloud</h4>
+          <h4 class="skill-group-title" data-en>Infrastructure &amp; Cloud</h4>
+          <h4 class="skill-group-title" data-he>תשתיות וענן</h4>
           <div class="skill-bars">
-            <div class="skill-bar-item"><span class="skill-name">Cloud Security</span><div class="skill-track"><div class="skill-fill skill-fill-90"></div></div></div>
-            <div class="skill-bar-item"><span class="skill-name">DevOps / CI-CD</span><div class="skill-track"><div class="skill-fill skill-fill-88"></div></div></div>
-            <div class="skill-bar-item"><span class="skill-name">Docker / Containers</span><div class="skill-track"><div class="skill-fill skill-fill-85"></div></div></div>
-            <div class="skill-bar-item"><span class="skill-name">Linux / Networking</span><div class="skill-track"><div class="skill-fill skill-fill-95"></div></div></div>
+            <div class="skill-bar-item">
+              <span class="skill-name" data-en>Cloud Security</span>
+              <span class="skill-name" data-he>אבטחת ענן</span>
+              <div class="skill-track"><div class="skill-fill skill-fill-90"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <span class="skill-name" data-en>DevOps / CI-CD</span>
+              <span class="skill-name" data-he>DevOps / CI-CD</span>
+              <div class="skill-track"><div class="skill-fill skill-fill-88"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <span class="skill-name" data-en>Docker / Containers</span>
+              <span class="skill-name" data-he>Docker / מכולות</span>
+              <div class="skill-track"><div class="skill-fill skill-fill-85"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <span class="skill-name" data-en>Linux / Networking</span>
+              <span class="skill-name" data-he>Linux / רשתות</span>
+              <div class="skill-track"><div class="skill-fill skill-fill-95"></div></div>
+            </div>
           </div>
         </div>
         <div class="skill-group">
-          <h4 class="skill-group-title">Languages &amp; Tools</h4>
+          <h4 class="skill-group-title" data-en>Languages &amp; Tools</h4>
+          <h4 class="skill-group-title" data-he>שפות וכלים</h4>
           <div class="lang-chips">
             <span class="lang-chip">Python</span>
             <span class="lang-chip">TypeScript</span>
@@ -415,7 +597,11 @@
       </div>
 
       <div class="certs-section">
-        <h4 class="certs-heading">Certifications <span class="certs-count">13+</span></h4>
+        <h4 class="certs-heading">
+          <span data-en>Certifications</span>
+          <span data-he>הסמכות</span>
+          <span class="certs-count">13+</span>
+        </h4>
         <div class="certs-grid">
           <div class="cert-card">
             <div class="cert-icon">🛡</div>
@@ -444,8 +630,10 @@
           </div>
           <a href="https://linkedin.com/in/oria" target="_blank" class="cert-card cert-card-more">
             <div class="cert-icon">+8</div>
-            <div class="cert-name">More certifications</div>
-            <div class="cert-issuer">View on LinkedIn →</div>
+            <div class="cert-name" data-en>More certifications</div>
+            <div class="cert-name" data-he>הסמכות נוספות</div>
+            <div class="cert-issuer" data-en>View on LinkedIn →</div>
+            <div class="cert-issuer" data-he>צפה בלינקדאין →</div>
           </a>
         </div>
       </div>
@@ -455,9 +643,12 @@
   <!-- CONTACT -->
   <section class="section section-contact" id="contact">
     <div class="container">
-      <div class="section-label">Contact</div>
-      <h2 class="section-title">Let's work together</h2>
-      <p class="section-sub">Available for consulting engagements, red team operations, AI projects, and speaking opportunities.</p>
+      <div class="section-label" data-en>Contact</div>
+      <div class="section-label" data-he>צור קשר</div>
+      <h2 class="section-title" data-en>Let's work together</h2>
+      <h2 class="section-title" data-he>בואו נעבוד יחד</h2>
+      <p class="section-sub" data-en>Available for consulting engagements, red team operations, AI projects, and speaking opportunities.</p>
+      <p class="section-sub" data-he>זמין להתקשרויות ייעוץ, מבצעי Red Team, פרויקטי AI והרצאות.</p>
 
       <div class="contact-grid">
         <a href="mailto:OriAshkenazi@cyberautomationai.cloud" class="contact-card">
@@ -465,7 +656,8 @@
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </div>
           <div class="contact-card-body">
-            <div class="contact-card-label">Email</div>
+            <div class="contact-card-label" data-en>Email</div>
+            <div class="contact-card-label" data-he>אימייל</div>
             <div class="contact-card-val">OriAshkenazi@cyberautomationai.cloud</div>
           </div>
         </a>
@@ -502,16 +694,20 @@
         <a href="https://outlook.office.com/bookwithme/user/043ec6fd4c0043119c10f02aee6901f9@cyberautomationai.cloud/meetingtype/jFJnhRFYfkaNAftX1qlc5A2?anonymous&ismsaljsauthenabled&ep=mLinkFromTile" target="_blank" class="meeting-card">
           <div class="meeting-icon">📅</div>
           <div class="meeting-body">
-            <div class="meeting-title">Schedule a Meeting</div>
-            <div class="meeting-sub">Book a slot — English</div>
+            <div class="meeting-title" data-en>Schedule a Meeting</div>
+            <div class="meeting-title" data-he>קביעת פגישה</div>
+            <div class="meeting-sub" data-en>Book a slot — English</div>
+            <div class="meeting-sub" data-he>הזמן מקום — אנגלית</div>
           </div>
           <div class="meeting-arrow">→</div>
         </a>
         <a href="https://outlook.office.com/bookwithme/user/043ec6fd4c0043119c10f02aee6901f9@cyberautomationai.cloud/meetingtype/qx3cJaRmsUqmR2-VcLeZnQ2?anonymous&ismsaljsauthenabled&ep=mLinkFromTile" target="_blank" class="meeting-card">
           <div class="meeting-icon">📅</div>
           <div class="meeting-body">
-            <div class="meeting-title">קביעת פגישה עסקית</div>
-            <div class="meeting-sub">לחץ לקביעת פגישה — עברית</div>
+            <div class="meeting-title" data-en>Book a Business Meeting</div>
+            <div class="meeting-title" data-he>קביעת פגישה עסקית</div>
+            <div class="meeting-sub" data-en>Click to book — Hebrew</div>
+            <div class="meeting-sub" data-he>לחץ לקביעת פגישה — עברית</div>
           </div>
           <div class="meeting-arrow">→</div>
         </a>
@@ -525,23 +721,45 @@
       <div class="footer-brand">
         <span class="footer-name">Ori Ashkenazi</span>
       </div>
-      <p class="footer-copy">© 2026 Ori Ashkenazi · Cybersecurity &amp; AI Consultant</p>
+      <p class="footer-copy" data-en>© 2026 Ori Ashkenazi · Cybersecurity &amp; AI Consultant</p>
+      <p class="footer-copy" data-he>© 2026 אורי אשכנזי · יועץ סייבר ובינה מלאכותית</p>
       <div class="footer-links">
         <a href="https://linkedin.com/in/oria" target="_blank" class="footer-link">LinkedIn</a>
         <a href="https://github.com/TarzEH" target="_blank" class="footer-link">GitHub</a>
-        <a href="mailto:OriAshkenazi@cyberautomationai.cloud" class="footer-link">Email</a>
+        <a href="mailto:OriAshkenazi@cyberautomationai.cloud" class="footer-link" data-en>Email</a>
+        <a href="mailto:OriAshkenazi@cyberautomationai.cloud" class="footer-link" data-he>אימייל</a>
       </div>
     </div>
   </footer>
 
   <script>
-    // Nav scroll effect
+    // ── Language toggle ──────────────────────────────────────────
+    const html = document.documentElement;
+    const langBtn = document.getElementById('lang-btn');
+    let currentLang = localStorage.getItem('lang') || 'en';
+
+    function applyLang(lang) {
+      currentLang = lang;
+      html.lang = lang;
+      html.dir  = lang === 'he' ? 'rtl' : 'ltr';
+      langBtn.textContent = lang === 'he' ? '🌐 English' : '🌐 עברית';
+      localStorage.setItem('lang', lang);
+    }
+
+    langBtn.addEventListener('click', () => {
+      applyLang(currentLang === 'en' ? 'he' : 'en');
+    });
+
+    // Apply saved preference on load
+    applyLang(currentLang);
+
+    // ── Nav scroll effect ────────────────────────────────────────
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
       nav.classList.toggle('nav-scrolled', window.scrollY > 40);
     }, { passive: true });
 
-    // Mobile burger
+    // ── Mobile burger ────────────────────────────────────────────
     const burger = document.getElementById('burger');
     const mobileMenu = document.getElementById('mobile-menu');
     burger.addEventListener('click', () => {
@@ -553,7 +771,7 @@
       mobileMenu.classList.remove('open');
     }));
 
-    // Skill bar animation
+    // ── Skill bar animation ──────────────────────────────────────
     const fills = document.querySelectorAll('.skill-fill');
     const obs = new IntersectionObserver(entries => {
       entries.forEach(e => {
@@ -567,7 +785,7 @@
     }, { threshold: 0.2 });
     fills.forEach(f => { f.style.width = '0'; obs.observe(f); });
 
-    // Active nav link on scroll
+    // ── Active nav link on scroll ────────────────────────────────
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
     const scrollSpy = () => {
