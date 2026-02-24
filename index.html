@@ -39,6 +39,129 @@
     html[dir="rtl"] .contact-card { flex-direction: row-reverse; text-align: right; }
     html[dir="rtl"] .meeting-card { flex-direction: row-reverse; }
     html[dir="rtl"] .meeting-arrow { transform: scaleX(-1); }
+
+    /* ── Scroll-reveal animation ── */
+    .reveal-card {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1), transform 0.65s cubic-bezier(0.22,1,0.36,1);
+    }
+    .reveal-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .service-card, .project-card, .tl-item, .cert-card {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.55s cubic-bezier(0.22,1,0.36,1), transform 0.55s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s;
+    }
+    .service-card.visible, .project-card.visible, .tl-item.visible, .cert-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── Presentations section ── */
+    .pres-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 28px;
+      margin-top: 40px;
+    }
+    .pres-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s, border-color 0.3s;
+    }
+    .pres-card:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.45), 0 0 0 1px rgba(99,179,237,0.25);
+      border-color: rgba(99,179,237,0.35);
+    }
+    .pres-cover-wrap {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 16/9;
+    }
+    .pres-cover {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s cubic-bezier(0.22,1,0.36,1);
+      display: block;
+    }
+    .pres-card:hover .pres-cover { transform: scale(1.04); }
+    .pres-cover-overlay {
+      position: absolute;
+      top: 12px; left: 12px;
+      display: flex; gap: 6px; flex-wrap: wrap;
+    }
+    html[dir="rtl"] .pres-cover-overlay { left: auto; right: 12px; }
+    .pres-tag {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+      background: rgba(15,23,42,0.75); backdrop-filter: blur(8px);
+      color: #93c5fd; border: 1px solid rgba(99,179,237,0.3);
+      padding: 3px 10px; border-radius: 20px;
+    }
+    .pres-tag-ai { color: #c4b5fd; border-color: rgba(167,139,250,0.35); }
+    .pres-body { padding: 24px; }
+    .pres-title {
+      font-size: 1.15rem; font-weight: 700;
+      color: var(--text); margin: 0 0 10px;
+      background: linear-gradient(135deg, #e2e8f0, #93c5fd);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .pres-desc {
+      font-size: 0.875rem; color: var(--text-2); line-height: 1.65;
+      margin: 0 0 16px;
+    }
+    .pres-meta {
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 18px;
+    }
+    .pres-slides {
+      font-size: 12px; font-weight: 600; color: var(--text-3);
+      background: rgba(255,255,255,0.05); border: 1px solid var(--border);
+      padding: 3px 10px; border-radius: 20px;
+    }
+    .pres-actions {
+      display: flex; gap: 10px; flex-wrap: wrap;
+    }
+    .pres-btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 13px; font-weight: 600;
+      padding: 9px 18px; border-radius: 10px;
+      text-decoration: none; transition: all 0.25s;
+    }
+    .pres-btn-primary {
+      background: linear-gradient(135deg, #3b82f6, #6366f1);
+      color: #fff; border: none;
+      box-shadow: 0 4px 14px rgba(99,102,241,0.35);
+    }
+    .pres-btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(99,102,241,0.5);
+    }
+    .pres-btn-secondary {
+      background: rgba(255,255,255,0.06);
+      color: var(--text-2); border: 1px solid var(--border);
+    }
+    .pres-btn-secondary:hover {
+      background: rgba(255,255,255,0.1); color: var(--text);
+      border-color: rgba(255,255,255,0.2);
+    }
+
+    /* ── Floating glow cursor trail ── */
+    .cursor-glow {
+      position: fixed; pointer-events: none; z-index: 9999;
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(99,102,241,0.12) 0%, transparent 70%);
+      transform: translate(-50%, -50%);
+      transition: left 0.08s linear, top 0.08s linear;
+      mix-blend-mode: screen;
+    }
   </style>
 </head>
 <body>
@@ -60,6 +183,8 @@
         <a href="#experience" class="nav-link" data-he>ניסיון</a>
         <a href="#skills"     class="nav-link" data-en>Skills</a>
         <a href="#skills"     class="nav-link" data-he>כישורים</a>
+        <a href="#presentations" class="nav-link" data-en>Talks</a>
+        <a href="#presentations" class="nav-link" data-he>הרצאות</a>
         <a href="#contact"    class="nav-cta"  data-en>Let's Talk</a>
         <a href="#contact"    class="nav-cta"  data-he>דברו איתי</a>
         <button class="lang-toggle" id="lang-btn" aria-label="Switch language">🌐 עברית</button>
@@ -79,6 +204,8 @@
       <a href="#experience" class="nav-mobile-link" data-he>ניסיון</a>
       <a href="#skills"     class="nav-mobile-link" data-en>Skills</a>
       <a href="#skills"     class="nav-mobile-link" data-he>כישורים</a>
+      <a href="#presentations" class="nav-mobile-link" data-en>Talks</a>
+      <a href="#presentations" class="nav-mobile-link" data-he>הרצאות</a>
       <a href="#contact"    class="nav-mobile-link nav-mobile-cta" data-en>Let's Talk</a>
       <a href="#contact"    class="nav-mobile-link nav-mobile-cta" data-he>דברו איתי</a>
     </div>
@@ -640,6 +767,59 @@
     </div>
   </section>
 
+  <!-- PRESENTATIONS -->
+  <section class="section section-alt" id="presentations">
+    <div class="container">
+      <div class="section-label" data-en>Talks &amp; Presentations</div>
+      <div class="section-label" data-he>הרצאות ומצגות</div>
+      <h2 class="section-title" data-en>Knowledge I share</h2>
+      <h2 class="section-title" data-he>ידע שאני משתף</h2>
+      <p class="section-sub" data-en>Research-backed presentations on offensive security, AI, and the future of cyber operations.</p>
+      <p class="section-sub" data-he>מצגות מבוססות מחקר על אבטחה התקפית, AI ועתיד מבצעי הסייבר.</p>
+
+      <div class="pres-grid">
+        <div class="pres-card reveal-card">
+          <div class="pres-cover-wrap">
+            <img src="recon-cover-en.jpg" alt="AI-Powered Reconnaissance" class="pres-cover" />
+            <div class="pres-cover-overlay">
+              <span class="pres-tag" data-en>Offensive Security</span>
+              <span class="pres-tag" data-he>אבטחה התקפית</span>
+              <span class="pres-tag pres-tag-ai">AI</span>
+            </div>
+          </div>
+          <div class="pres-body">
+            <h3 class="pres-title" data-en>AI-Powered Reconnaissance</h3>
+            <h3 class="pres-title" data-he>סיור מודיעיני מבוסס AI</h3>
+            <p class="pres-desc" data-en>How to turn days of manual intelligence gathering into minutes of critical, automated insights using autonomous AI agents.</p>
+            <p class="pres-desc" data-he>כיצד להפוך ימים של איסוף מודיעין ידני לדקות של תובנות קריטיות ואוטומטיות באמצעות סוכני AI אוטונומיים.</p>
+            <div class="pres-meta">
+              <span class="pres-slides" data-en>10 slides</span>
+              <span class="pres-slides" data-he>10 שקופיות</span>
+            </div>
+            <div class="pres-actions">
+              <a href="AI-POWERED-RECONNAISSANCE-EN.pdf" target="_blank" class="pres-btn pres-btn-primary" data-en>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download EN
+              </a>
+              <a href="AI-POWERED-RECONNAISSANCE-HE.pdf" target="_blank" class="pres-btn pres-btn-secondary" data-en>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download HE
+              </a>
+              <a href="AI-POWERED-RECONNAISSANCE-HE.pdf" target="_blank" class="pres-btn pres-btn-primary" data-he>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                הורדה בעברית
+              </a>
+              <a href="AI-POWERED-RECONNAISSANCE-EN.pdf" target="_blank" class="pres-btn pres-btn-secondary" data-he>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download EN
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section class="section section-contact" id="contact">
     <div class="container">
@@ -765,6 +945,33 @@
       navLinks.forEach(l => l.classList.toggle('nav-link-active', l.getAttribute('href') === '#' + current));
     };
     window.addEventListener('scroll', scrollSpy, { passive: true });
+
+    // ── Scroll-reveal for cards ───────────────────────────────────────
+    const revealEls = document.querySelectorAll(
+      '.service-card, .project-card, .tl-item, .cert-card, .reveal-card, .contact-card'
+    );
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          // stagger delay based on sibling index
+          const siblings = Array.from(e.target.parentElement.children);
+          const idx = siblings.indexOf(e.target);
+          e.target.style.transitionDelay = (idx * 80) + 'ms';
+          e.target.classList.add('visible');
+          revealObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => revealObs.observe(el));
+
+    // ── Cursor glow trail ──────────────────────────────────────────────
+    const glow = document.createElement('div');
+    glow.className = 'cursor-glow';
+    document.body.appendChild(glow);
+    document.addEventListener('mousemove', e => {
+      glow.style.left = e.clientX + 'px';
+      glow.style.top  = e.clientY + 'px';
+    });
   </script>
 </body>
 </html>
