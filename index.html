@@ -21,12 +21,15 @@
     }
     html[dir="rtl"] .lang-toggle { margin-left: 0; margin-right: 8px; }
     .lang-toggle:hover { background: rgba(255,255,255,0.12); color: var(--text); border-color: rgba(255,255,255,0.2); }
-    [data-he] { display: none; }
-    html[lang="he"] [data-en] { display: none; }
-    html[lang="he"] [data-he] { display: revert; }
-    html[lang="he"] span[data-he], html[lang="he"] a[data-he] { display: inline; }
-    html[lang="he"] div[data-he], html[lang="he"] p[data-he], html[lang="he"] h2[data-he],
-    html[lang="he"] h3[data-he], html[lang="he"] h4[data-he] { display: block; }
+    /* Hide Hebrew elements by default */
+    [data-he] { display: none !important; }
+    /* In Hebrew mode: hide English, show Hebrew */
+    html[lang="he"] [data-en] { display: none !important; }
+    html[lang="he"] span[data-he], html[lang="he"] a[data-he],
+    html[lang="he"] button[data-he] { display: inline !important; }
+    html[lang="he"] div[data-he], html[lang="he"] p[data-he],
+    html[lang="he"] h2[data-he], html[lang="he"] h3[data-he],
+    html[lang="he"] h4[data-he] { display: block !important; }
     html[dir="rtl"] .about-grid { direction: rtl; }
     html[dir="rtl"] .timeline { direction: rtl; }
     html[dir="rtl"] .tl-head { flex-direction: row-reverse; }
