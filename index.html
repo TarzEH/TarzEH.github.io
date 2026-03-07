@@ -3,15 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ori Ashkenazi — Cybersecurity & AI Consultant</title>
-  <meta name="description" content="Ori Ashkenazi — Cybersecurity, AI & Automation Consultant. Red Teaming, Secure AI, Cloud Infrastructure, Penetration Testing." />
+  <title>Ori Ashkenazi — Security, AI &amp; Development</title>
+  <meta name="description" content="Ori Ashkenazi — Security engineer, developer, and AI builder. Pentesting, AI agents, full-stack development, and consulting." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <style>
     html[lang="he"] body { font-family: 'Heebo', sans-serif; }
-    html[lang="he"] .section-title { font-family: 'Heebo', sans-serif; font-weight: 700; }
+    html[lang="he"] .section-title { font-family: 'Heebo', sans-serif; font-weight: 800; }
+    html[lang="he"] .hero-name { font-family: 'Heebo', sans-serif; font-weight: 900; -webkit-text-fill-color: transparent; }
+    html[lang="he"] .hero-stat-val { font-family: 'Heebo', sans-serif; font-weight: 800; -webkit-text-fill-color: transparent; }
+    html[lang="he"] .nav-logo-name { font-family: 'Heebo', sans-serif; }
     .lang-toggle {
       display: inline-flex; align-items: center; gap: 6px;
       font-size: 13px; font-weight: 600; cursor: pointer;
@@ -31,10 +34,14 @@
     html[lang="he"] h2[data-he], html[lang="he"] h3[data-he],
     html[lang="he"] h4[data-he] { display: block !important; }
     html[dir="rtl"] .about-grid { direction: rtl; }
-    html[dir="rtl"] .timeline { direction: rtl; }
+    html[dir="rtl"] .about-text-col { text-align: right; }
+    html[dir="rtl"] .about-tags { justify-content: flex-start; }
+    html[dir="rtl"] .timeline { direction: rtl; padding-left: 0; padding-right: 32px; }
+    html[dir="rtl"] .timeline::before { left: auto; right: 0; }
+    html[dir="rtl"] .tl-marker { left: auto; right: -38px; }
     html[dir="rtl"] .tl-head { flex-direction: row-reverse; }
-    html[dir="rtl"] .tl-item { flex-direction: row-reverse; }
-    html[dir="rtl"] .tl-marker { margin-left: 0; margin-right: 0; }
+    html[dir="rtl"] .tl-body { text-align: right; }
+    html[dir="rtl"] .tl-body:hover { transform: translateX(-4px); }
     html[dir="rtl"] .nav-links { flex-direction: row-reverse; }
     html[dir="rtl"] .hero-actions { flex-direction: row-reverse; }
     html[dir="rtl"] .footer-inner { flex-direction: row-reverse; }
@@ -42,6 +49,20 @@
     html[dir="rtl"] .contact-card { flex-direction: row-reverse; text-align: right; }
     html[dir="rtl"] .meeting-card { flex-direction: row-reverse; }
     html[dir="rtl"] .meeting-arrow { transform: scaleX(-1); }
+    html[dir="rtl"] .section-label { flex-direction: row-reverse; }
+    html[dir="rtl"] .section-label::before { display: none; }
+    html[dir="rtl"] .section-label::after { content: ''; width: 20px; height: 1px; background: var(--blue); }
+    html[dir="rtl"] .section-title { text-align: right; }
+    html[dir="rtl"] .section-sub { text-align: right; margin-left: auto; margin-right: 0; }
+    html[dir="rtl"] .service-card { text-align: right; }
+    html[dir="rtl"] .service-icon { margin-left: auto; margin-right: 0; }
+    html[dir="rtl"] .skill-group-title { flex-direction: row-reverse; }
+    html[dir="rtl"] .tl-tags { justify-content: flex-end; }
+    html[dir="rtl"] .certs-heading { flex-direction: row-reverse; }
+    html[dir="rtl"] .project-card-top { flex-direction: row-reverse; }
+    html[dir="rtl"] .project-card { text-align: right; }
+    html[dir="rtl"] .project-meta { flex-direction: row-reverse; }
+    html[dir="rtl"] .projects-more { text-align: center; }
 
     /* ── Scroll-reveal animation ── */
     .reveal-card {
@@ -111,9 +132,6 @@
     .pres-title {
       font-size: 1.15rem; font-weight: 700;
       color: var(--text); margin: 0 0 10px;
-      background: linear-gradient(135deg, #e2e8f0, #93c5fd);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
     }
     .pres-desc {
       font-size: 0.875rem; color: var(--text-2); line-height: 1.65;
@@ -223,25 +241,25 @@
     <div class="container hero-inner">
       <div class="hero-badge">
         <span class="badge-dot"></span>
-        <span data-en>Available for engagements</span>
-        <span data-he>פתוח להתקשרויות חדשות</span>
+        <span data-en>Open to projects</span>
+        <span data-he>פתוח לפרויקטים</span>
       </div>
       <h1 class="hero-name">Ori Ashkenazi</h1>
-      <p class="hero-title" data-en>Cybersecurity &amp; AI Consultant</p>
-      <p class="hero-title" data-he>יועץ סייבר ובינה מלאכותית</p>
-      <p class="hero-sub" data-en>Red Teaming · Secure AI · Cloud Security · Penetration Testing</p>
-      <p class="hero-sub" data-he>Red Team · AI מאובטח · אבטחת ענן · בדיקות חדירה</p>
+      <p class="hero-title" data-en>I build, secure, and automate systems.</p>
+      <p class="hero-title" data-he>בונה, מאבטח ומייעל מערכות.</p>
+      <p class="hero-sub" data-en>Full-stack development · AI agents · Offensive security · Consulting</p>
+      <p class="hero-sub" data-he>פיתוח Full-stack · סוכני AI · אבטחה התקפית · ייעוץ</p>
       <div class="hero-actions">
-        <a href="https://outlook.office.com/bookwithme/user/043ec6fd4c0043119c10f02aee6901f9@cyberautomationai.cloud?anonymous&ismsaljsauthenabled&ep=bwmEmailSignature" target="_blank" class="btn btn-primary" data-en>Book a Meeting</a>
-        <a href="https://outlook.office.com/bookwithme/user/043ec6fd4c0043119c10f02aee6901f9@cyberautomationai.cloud?anonymous&ismsaljsauthenabled&ep=bwmEmailSignature" target="_blank" class="btn btn-primary" data-he>קביעת פגישה</a>
-        <a href="#projects" class="btn btn-ghost" data-en>View Work</a>
-        <a href="#projects" class="btn btn-ghost" data-he>צפה בעבודות</a>
+        <a href="mailto:oriashkenazi@ashcyber.tech" class="btn btn-primary" data-en>Get in Touch</a>
+        <a href="mailto:oriashkenazi@ashcyber.tech" class="btn btn-primary" data-he>צרו קשר</a>
+        <a href="#projects" class="btn btn-ghost" data-en>See My Work</a>
+        <a href="#projects" class="btn btn-ghost" data-he>הפרויקטים שלי</a>
       </div>
       <div class="hero-stats">
         <div class="hero-stat">
           <span class="hero-stat-val">10+</span>
-          <span class="hero-stat-label" data-en>Years Experience</span>
-          <span class="hero-stat-label" data-he>שנות ניסיון</span>
+          <span class="hero-stat-label" data-en>Years in Tech</span>
+          <span class="hero-stat-label" data-he>שנים בתעשייה</span>
         </div>
         <div class="hero-stat-divider"></div>
         <div class="hero-stat">
@@ -251,15 +269,9 @@
         </div>
         <div class="hero-stat-divider"></div>
         <div class="hero-stat">
-          <span class="hero-stat-val">3</span>
-          <span class="hero-stat-label" data-en>Core Pillars</span>
-          <span class="hero-stat-label" data-he>עמודי תווך</span>
-        </div>
-        <div class="hero-stat-divider"></div>
-        <div class="hero-stat">
-          <span class="hero-stat-val">500+</span>
-          <span class="hero-stat-label" data-en>LinkedIn Connections</span>
-          <span class="hero-stat-label" data-he>קשרים בלינקדאין</span>
+          <span class="hero-stat-val">1</span>
+          <span class="hero-stat-label" data-en>Published CVE</span>
+          <span class="hero-stat-label" data-he>CVE שפורסם</span>
         </div>
       </div>
     </div>
@@ -291,27 +303,25 @@
           </div>
         </div>
         <div class="about-text-col">
-          <h2 class="section-title" data-en>Building resilience at the intersection of security and intelligence.</h2>
-          <h2 class="section-title" data-he>בונה חוסן בצומת שבין אבטחה לבינה מלאכותית.</h2>
-          <p class="about-p" data-en>I operate at the strategic intersection of Red Teaming, Secure Cloud, and AI Automation. Through my consultancy <strong>Ash</strong>, I bridge the gap between complex infrastructure and business efficiency by engineering digital resilience for enterprise-level organisations.</p>
-          <p class="about-p" data-he>אני פועל בצומת האסטרטגי של Red Teaming, ענן מאובטח ואוטומציית AI. דרך הייעוץ שלי <strong>Ash</strong>, אני מגשר על הפער בין תשתיות מורכבות לבין יעילות עסקית — ומהנדס חוסן דיגיטלי לארגונים ברמה ארגונית.</p>
-          <p class="about-p" data-en>My work spans three core pillars: advanced adversarial simulations and vulnerability research; architecting autonomous, agentic AI workflows with robust governance frameworks; and deploying hardened cloud environments with secure, automated pipelines.</p>
-          <p class="about-p" data-he>עבודתי נשענת על שלושה עמודי תווך: סימולציות תקיפה מתקדמות ומחקר פגיעויות; תכנון תהליכי AI אוטונומיים עם מסגרות ממשל חזקות; ופריסת סביבות ענן מוקשחות עם צינורות אוטומציה מאובטחים.</p>
-          <p class="about-p" data-en>Beyond consulting, I hunt bugs on Bugcrowd, build open-source hacking tools, and teach cybersecurity and AI to the next generation of practitioners.</p>
-          <p class="about-p" data-he>מעבר לייעוץ, אני צד בציד באגים ב-Bugcrowd, בונה כלי פריצה קוד-פתוח, ומלמד סייבר ו-AI לדור הבא של אנשי המקצוע.</p>
+          <h2 class="section-title" data-en>Security engineer who also builds and automates.</h2>
+          <h2 class="section-title" data-he>מהנדס אבטחה שגם בונה ומייעל.</h2>
+          <p class="about-p" data-en>I started in DevOps and infrastructure, moved into offensive security and penetration testing, and now combine it all — building systems, breaking them, and automating whatever's left. I run <strong>Ash</strong>, a small consultancy focused on dev, security, and AI.</p>
+          <p class="about-p" data-he>התחלתי ב-DevOps ותשתיות, עברתי לאבטחה התקפית ובדיקות חדירה, והיום אני משלב את הכל — בונה מערכות, שובר אותן, ומייעל את כל מה שבאמצע. אני מפעיל את <strong>Ash</strong>, ייעוץ ממוקד בפיתוח, אבטחה ו-AI.</p>
+          <p class="about-p" data-en>Day to day, I work as an AI Ops Engineer at Bank Hapoalim, integrating AI into operational workflows. On the side, I hunt bugs on Bugcrowd, build open-source security tools, and give talks on AI and offensive security.</p>
+          <p class="about-p" data-he>ביום-יום, אני עובד כמהנדס AI Ops בבנק הפועלים — משלב AI בתהליכי עבודה תפעוליים. במקביל, אני צד באגים ב-Bugcrowd, בונה כלי אבטחה בקוד פתוח, ומרצה על AI ואבטחה התקפית.</p>
           <div class="about-tags">
+            <span class="tag" data-en>Consulting</span>
+            <span class="tag" data-he>ייעוץ</span>
+            <span class="tag" data-en>Development</span>
+            <span class="tag" data-he>פיתוח</span>
+            <span class="tag" data-en>AI</span>
+            <span class="tag" data-he>AI</span>
             <span class="tag" data-en>Red Teaming</span>
             <span class="tag" data-he>Red Teaming</span>
-            <span class="tag" data-en>Secure AI</span>
-            <span class="tag" data-he>AI מאובטח</span>
-            <span class="tag" data-en>Cloud Security</span>
-            <span class="tag" data-he>אבטחת ענן</span>
-            <span class="tag" data-en>Penetration Testing</span>
-            <span class="tag" data-he>בדיקות חדירה</span>
-            <span class="tag" data-en>Bug Bounty</span>
-            <span class="tag" data-he>Bug Bounty</span>
-            <span class="tag" data-en>DevSecOps</span>
-            <span class="tag" data-he>DevSecOps</span>
+            <span class="tag" data-en>IT Management</span>
+            <span class="tag" data-he>ניהול IT</span>
+            <span class="tag" data-en>Training</span>
+            <span class="tag" data-he>הדרכה</span>
           </div>
         </div>
       </div>
@@ -325,62 +335,62 @@
       <div class="section-label" data-he>שירותים</div>
       <h2 class="section-title" data-en>What I do</h2>
       <h2 class="section-title" data-he>מה אני עושה</h2>
-      <p class="section-sub" data-en>End-to-end security and AI solutions for enterprises and growing organisations.</p>
-      <p class="section-sub" data-he>פתרונות אבטחה ו-AI מקצה לקצה לארגונים גדולים וצומחים.</p>
+      <p class="section-sub" data-en>The things I actually spend my time on — at work, for clients, and for fun.</p>
+      <p class="section-sub" data-he>הדברים שאני בפועל עושה — בעבודה, ללקוחות, ובשביל הכיף.</p>
       <div class="services-grid">
         <div class="service-card">
-          <div class="service-icon service-icon-red">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <div class="service-icon service-icon-teal">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="m16.24 7.76-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12z"/></svg>
           </div>
-          <h3 class="service-title" data-en>Red Team Operations</h3>
-          <h3 class="service-title" data-he>מבצעי Red Team</h3>
-          <p class="service-desc" data-en>Advanced adversarial simulations, purple team exercises, and vulnerability research for enterprise environments.</p>
-          <p class="service-desc" data-he>סימולציות תקיפה מתקדמות, תרגילי Purple Team ומחקר פגיעויות לסביבות ארגוניות.</p>
+          <h3 class="service-title" data-en>Consulting &amp; Architecture</h3>
+          <h3 class="service-title" data-he>ייעוץ וארכיטקטורה</h3>
+          <p class="service-desc" data-en>Security assessments, architecture reviews, and hands-on planning for organizations that need a clear technical direction before building anything.</p>
+          <p class="service-desc" data-he>הערכות אבטחה, סקירת ארכיטקטורה ותכנון מעשי לארגונים שרוצים כיוון טכני ברור לפני שמתחילים לבנות.</p>
         </div>
         <div class="service-card">
           <div class="service-icon service-icon-blue">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
           </div>
-          <h3 class="service-title" data-en>Secure AI &amp; Automation</h3>
-          <h3 class="service-title" data-he>AI מאובטח ואוטומציה</h3>
-          <p class="service-desc" data-en>Architecting autonomous agentic workflows, AI governance frameworks, and intelligent automation pipelines.</p>
-          <p class="service-desc" data-he>תכנון תהליכי AI אוטונומיים, מסגרות ממשל AI וצינורות אוטומציה חכמים.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon service-icon-teal">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
-          </div>
-          <h3 class="service-title" data-en>Cloud Security</h3>
-          <h3 class="service-title" data-he>אבטחת ענן</h3>
-          <p class="service-desc" data-en>Deploying hardened cloud environments, secure CI/CD pipelines, and automated infrastructure workflows.</p>
-          <p class="service-desc" data-he>פריסת סביבות ענן מוקשחות, צינורות CI/CD מאובטחים ותהליכי תשתית אוטומטיים.</p>
+          <h3 class="service-title" data-en>Development</h3>
+          <h3 class="service-title" data-he>פיתוח</h3>
+          <p class="service-desc" data-en>Full-stack applications, APIs, integrations, and internal tools. I write production code — from backend services to the dashboards people actually use.</p>
+          <p class="service-desc" data-he>אפליקציות Full-stack, ממשקי API, אינטגרציות וכלים פנימיים. אני כותב קוד לפרודקשן — משירותי backend ועד דשבורדים שאנשים באמת משתמשים בהם.</p>
         </div>
         <div class="service-card">
           <div class="service-icon service-icon-purple">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a4 4 0 0 1 4 4v1a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2V6a4 4 0 0 1 4-4z"/><path d="M9 14v2a3 3 0 0 0 6 0v-2"/><path d="M10 8h.01M14 8h.01"/><path d="M12 18v4"/><path d="M8 22h8"/></svg>
           </div>
-          <h3 class="service-title" data-en>Pentesting &amp; Bug Hunting</h3>
-          <h3 class="service-title" data-he>בדיקות חדירה וציד באגים</h3>
-          <p class="service-desc" data-en>Web, infrastructure, and API vulnerability research. Active Bugcrowd hunter with CVE research experience.</p>
-          <p class="service-desc" data-he>מחקר פגיעויות ב-Web, תשתיות ו-API. ציד פעיל ב-Bugcrowd עם ניסיון במחקר CVE.</p>
+          <h3 class="service-title" data-en>AI &amp; Automation</h3>
+          <h3 class="service-title" data-he>AI ואוטומציה</h3>
+          <p class="service-desc" data-en>Building AI agents, automating workflows with LLMs, and integrating AI into existing systems. Practical stuff — not slide decks.</p>
+          <p class="service-desc" data-he>בניית סוכני AI, אוטומציה של תהליכים עם LLMs ושילוב AI במערכות קיימות. דברים מעשיים — לא מצגות.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon service-icon-red">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+          </div>
+          <h3 class="service-title" data-en>Red Teaming</h3>
+          <h3 class="service-title" data-he>Red Teaming</h3>
+          <p class="service-desc" data-en>Penetration testing, vulnerability research, and adversary simulations. I've found real CVEs and hunt bugs on Bugcrowd.</p>
+          <p class="service-desc" data-he>בדיקות חדירה, מחקר פגיעויות וסימולציות תקיפה. מצאתי CVE-ים אמיתיים וצד באגים ב-Bugcrowd.</p>
         </div>
         <div class="service-card">
           <div class="service-icon service-icon-orange">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
           </div>
-          <h3 class="service-title" data-en>DevSecOps &amp; Tooling</h3>
-          <h3 class="service-title" data-he>DevSecOps וכלים</h3>
-          <p class="service-desc" data-en>Custom security tooling, OSINT automation, SSH tunnelling, and bespoke ops scripts for security teams.</p>
-          <p class="service-desc" data-he>כלי אבטחה מותאמים, אוטומציית OSINT, מנהרות SSH וסקריפטים ייעודיים לצוותי אבטחה.</p>
+          <h3 class="service-title" data-en>Support &amp; IT Management</h3>
+          <h3 class="service-title" data-he>תמיכה וניהול IT</h3>
+          <p class="service-desc" data-en>Ongoing IT management, monitoring, security patching, and being the person you call when something breaks at 2am.</p>
+          <p class="service-desc" data-he>ניהול IT שוטף, ניטור, עדכוני אבטחה, ולהיות הבן אדם שמתקשרים אליו כשמשהו נשבר בשתיים בלילה.</p>
         </div>
         <div class="service-card">
           <div class="service-icon service-icon-green">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
           </div>
-          <h3 class="service-title" data-en>Workshops &amp; Training</h3>
-          <h3 class="service-title" data-he>סדנאות והדרכות</h3>
-          <p class="service-desc" data-en>Cyber defence, AI integration, and offensive security training for teams and individuals.</p>
-          <p class="service-desc" data-he>הדרכות הגנת סייבר, שילוב AI ואבטחה התקפית לצוותים ויחידים.</p>
+          <h3 class="service-title" data-en>Training &amp; Workshops</h3>
+          <h3 class="service-title" data-he>הדרכות וסדנאות</h3>
+          <p class="service-desc" data-en>Hands-on workshops on AI, cybersecurity, and DevOps. I teach teams how to actually use the tools — not just what they are.</p>
+          <p class="service-desc" data-he>סדנאות מעשיות על AI, סייבר ו-DevOps. אני מלמד צוותים איך באמת להשתמש בכלים — לא רק מה הם.</p>
         </div>
       </div>
     </div>
@@ -391,10 +401,10 @@
     <div class="container">
       <div class="section-label" data-en>Projects</div>
       <div class="section-label" data-he>פרויקטים</div>
-      <h2 class="section-title" data-en>Open-source work</h2>
-      <h2 class="section-title" data-he>פרויקטי קוד פתוח</h2>
-      <p class="section-sub" data-en>Tools built for the security community — available on GitHub.</p>
-      <p class="section-sub" data-he>כלים שנבנו עבור קהילת הסייבר — זמינים ב-GitHub.</p>
+      <h2 class="section-title" data-en>Things I've built</h2>
+      <h2 class="section-title" data-he>דברים שבניתי</h2>
+      <p class="section-sub" data-en>Open-source tools I built and maintain. All on GitHub.</p>
+      <p class="section-sub" data-he>כלי קוד פתוח שבניתי ומתחזק. הכל ב-GitHub.</p>
       <div class="projects-grid">
 
         <a href="https://github.com/TarzEH/MudaleTunnel" target="_blank" class="project-card project-card-featured">
@@ -406,8 +416,8 @@
             <span class="project-badge">v2.0.1</span>
           </div>
           <h3 class="project-name">MudaleTunnel</h3>
-          <p class="project-desc" data-en>A Python CLI tool that simplifies SSH tunnel creation by automating nmap scans to detect open services and interactively generating port-forwarding commands.</p>
-          <p class="project-desc" data-he>כלי Python CLI שמפשט יצירת מנהרות SSH על ידי אוטומציה של סריקות nmap לזיהוי שירותים פתוחים ויצירה אינטראקטיבית של פקודות העברת פורטים.</p>
+          <p class="project-desc" data-en>CLI tool that scans a target with nmap, finds open services, and auto-generates SSH port-forwarding commands. Saves a lot of manual work during pentests.</p>
+          <p class="project-desc" data-he>כלי CLI שסורק מטרה עם nmap, מוצא שירותים פתוחים, ומייצר אוטומטית פקודות SSH port-forwarding. חוסך הרבה עבודה ידנית בבדיקות חדירה.</p>
           <div class="project-footer">
             <span class="project-link-text" data-en>View on GitHub →</span>
             <span class="project-link-text" data-he>צפה ב-GitHub →</span>
@@ -422,8 +432,8 @@
             </div>
           </div>
           <h3 class="project-name">CockpitMSF</h3>
-          <p class="project-desc" data-en>A Docker-based web UI layered on top of the Metasploit Framework, providing a modern interface for red team operations and exploit management.</p>
-          <p class="project-desc" data-he>ממשק ווב מבוסס Docker מעל Metasploit Framework, המספק ממשק מודרני לפעולות Red Team וניהול ניצולים.</p>
+          <p class="project-desc" data-en>A web UI for Metasploit, running in Docker. Makes it easier to manage sessions, run exploits, and keep track of what you're doing during an engagement.</p>
+          <p class="project-desc" data-he>ממשק ווב ל-Metasploit, רץ ב-Docker. מקל על ניהול sessions, הרצת exploits ומעקב אחרי מה שקורה במהלך בדיקה.</p>
           <div class="project-footer">
             <span class="project-link-text" data-en>View on GitHub →</span>
             <span class="project-link-text" data-he>צפה ב-GitHub →</span>
@@ -439,8 +449,8 @@
             <span class="project-stars">★ 2</span>
           </div>
           <h3 class="project-name">MIPS Compiler</h3>
-          <p class="project-desc" data-en>A compiler that translates Pascal syntax into MIPS assembly language using Lex and Yacc — demonstrating deep low-level systems programming expertise.</p>
-          <p class="project-desc" data-he>קומפיילר שמתרגם תחביר Pascal לשפת Assembly של MIPS באמצעות Lex ו-Yacc — המדגים מומחיות עמוקה בתכנות מערכות ברמה נמוכה.</p>
+          <p class="project-desc" data-en>Compiles Pascal to MIPS assembly using Lex and Yacc. A university project that taught me how compilers actually work under the hood.</p>
+          <p class="project-desc" data-he>מקמפל Pascal ל-MIPS assembly באמצעות Lex ו-Yacc. פרויקט אוניברסיטאי שלימד אותי איך קומפיילרים באמת עובדים מתחת למכסה.</p>
           <div class="project-footer">
             <span class="project-link-text" data-en>View on GitHub →</span>
             <span class="project-link-text" data-he>צפה ב-GitHub →</span>
@@ -477,14 +487,14 @@
               <span class="tl-date" data-en>Jan 2026 – Present</span>
               <span class="tl-date" data-he>ינואר 2026 – היום</span>
             </div>
-            <p class="tl-desc" data-en>Red Teaming, Secure AI Automation, and Cloud Security consultancy. Bridging high-level strategy with deep technical execution for enterprise clients.</p>
-            <p class="tl-desc" data-he>ייעוץ בתחומי Red Teaming, אוטומציית AI מאובטחת ואבטחת ענן. גישור בין אסטרטגיה ברמה גבוהה לביצוע טכני עמוק עבור לקוחות ארגוניים.</p>
+            <p class="tl-desc" data-en>Running my own consultancy — taking on dev, security, and AI projects for businesses that need senior hands-on work without hiring a full team.</p>
+            <p class="tl-desc" data-he>מפעיל את הייעוץ שלי — לוקח פרויקטים של פיתוח, אבטחה ו-AI לעסקים שצריכים עבודה בכירה ומעשית בלי לגייס צוות שלם.</p>
             <div class="tl-tags">
-              <span class="tag tag-sm">Red Team</span>
-              <span class="tag tag-sm" data-en>Secure AI</span>
-              <span class="tag tag-sm" data-he>AI מאובטח</span>
-              <span class="tag tag-sm" data-en>Cloud Security</span>
-              <span class="tag tag-sm" data-he>אבטחת ענן</span>
+              <span class="tag tag-sm" data-en>Security</span>
+              <span class="tag tag-sm" data-he>אבטחה</span>
+              <span class="tag tag-sm">AI</span>
+              <span class="tag tag-sm" data-en>Development</span>
+              <span class="tag tag-sm" data-he>פיתוח</span>
             </div>
           </div>
         </div>
@@ -502,8 +512,8 @@
               <span class="tl-date" data-en>Jan 2026 – Present</span>
               <span class="tl-date" data-he>ינואר 2026 – היום</span>
             </div>
-            <p class="tl-desc" data-en>Integrating AI and automation to improve existing processes and reduce SLA times. Leveraging agentic AI workflows and intelligent automation frameworks to transform operational pipelines.</p>
-            <p class="tl-desc" data-he>שילוב AI ואוטומציה לשיפור תהליכים קיימים וקיצור זמני SLA. שימוש בתהליכי AI אגנטיים ומסגרות אוטומציה חכמות לשינוי צינורות תפעוליים.</p>
+          <p class="tl-desc" data-en>Plugging AI into operational workflows — building agents, automating repetitive processes, and cutting SLA times across the bank's tech operations.</p>
+            <p class="tl-desc" data-he>משלב AI בתהליכי עבודה תפעוליים — בונה סוכנים, מייעל תהליכים חוזרים, ומקצר זמני SLA ברחבי הפעילות הטכנולוגית של הבנק.</p>
             <div class="tl-tags">
               <span class="tag tag-sm">AI/ML</span>
               <span class="tag tag-sm" data-en>Agentic AI</span>
@@ -527,8 +537,8 @@
               <span class="tl-date" data-en>Jul 2025 – Present</span>
               <span class="tl-date" data-he>יולי 2025 – היום</span>
             </div>
-            <p class="tl-desc" data-en>Active vulnerability researcher on the Bugcrowd platform. Specialising in web application and API security, with CVE research experience (e.g. CVE-2024-45595 eval injection in D-Tale).</p>
-            <p class="tl-desc" data-he>חוקר פגיעויות פעיל בפלטפורמת Bugcrowd. מתמחה באבטחת אפליקציות ווב ו-API, עם ניסיון במחקר CVE (לדוגמה: CVE-2024-45595 הזרקת eval ב-D-Tale).</p>
+            <p class="tl-desc" data-en>Hunting vulnerabilities in web apps and APIs on Bugcrowd. Found and reported CVE-2024-45595 (eval injection in D-Tale).</p>
+            <p class="tl-desc" data-he>ציד פגיעויות באפליקציות ווב ו-APIs ב-Bugcrowd. מצאתי ודיווחתי על CVE-2024-45595 (הזרקת eval ב-D-Tale).</p>
             <div class="tl-tags">
               <span class="tag tag-sm">Bug Bounty</span>
               <span class="tag tag-sm" data-en>CVE Research</span>
@@ -552,8 +562,8 @@
               <span class="tl-date" data-en>Oct 2024 – Sep 2025</span>
               <span class="tl-date" data-he>אוקטובר 2024 – ספטמבר 2025</span>
             </div>
-            <p class="tl-desc" data-en>Security specialist at a leading cyber range and training platform. Conducted deep technical research including CVE analysis and offensive security demonstrations.</p>
-            <p class="tl-desc" data-he>מומחה אבטחה בפלטפורמת אימון סייבר מובילה. ביצוע מחקר טכני מעמיק כולל ניתוח CVE והדגמות אבטחה התקפית.</p>
+            <p class="tl-desc" data-en>Built attack scenarios and training content for Cyberbit's cyber range platform. Deep-dived into CVE analysis and offensive security techniques.</p>
+            <p class="tl-desc" data-he>בניתי תרחישי תקיפה ותוכן הדרכה לפלטפורמת ה-Cyber Range של Cyberbit. צללתי לעומק לניתוח CVE וטכניקות אבטחה התקפית.</p>
             <div class="tl-tags">
               <span class="tag tag-sm" data-en>Cyber Range</span>
               <span class="tag tag-sm" data-he>מגרש סייבר</span>
@@ -578,8 +588,8 @@
               <span class="tl-date" data-en>Apr 2024 – Sep 2024</span>
               <span class="tl-date" data-he>אפריל 2024 – ספטמבר 2024</span>
             </div>
-            <p class="tl-desc" data-en>Secured enterprise infrastructure, hardened environments, and implemented security controls across the bank's hybrid cloud footprint.</p>
-            <p class="tl-desc" data-he>אבטחת תשתיות ארגוניות, הקשחת סביבות ויישום בקרות אבטחה על פני טביעת הרגל של הענן ההיברידי של הבנק.</p>
+            <p class="tl-desc" data-en>Hardened infrastructure, implemented security controls, and managed the bank's hybrid cloud security posture.</p>
+            <p class="tl-desc" data-he>הקשחתי תשתיות, יישמתי בקרות אבטחה, וניהלתי את מצב האבטחה של הענן ההיברידי של הבנק.</p>
             <div class="tl-tags">
               <span class="tag tag-sm" data-en>Infrastructure</span>
               <span class="tag tag-sm" data-he>תשתיות</span>
@@ -604,8 +614,8 @@
               <span class="tl-date" data-en>May 2023 – Apr 2024</span>
               <span class="tl-date" data-he>מאי 2023 – אפריל 2024</span>
             </div>
-            <p class="tl-desc" data-en>Designed and maintained CI/CD pipelines, containerised workloads, and automated operational processes to improve SLA and team efficiency.</p>
-            <p class="tl-desc" data-he>תכנון ותחזוקה של צינורות CI/CD, עומסי עבודה מכולות ותהליכים תפעוליים אוטומטיים לשיפור SLA ויעילות הצוות.</p>
+            <p class="tl-desc" data-en>Built and maintained CI/CD pipelines, containerized workloads, and automated whatever could be automated to keep things running smoothly.</p>
+            <p class="tl-desc" data-he>בניתי ותחזקתי צינורות CI/CD, עומסי עבודה בקונטיינרים, ואוטומציה של כל מה שאפשר לייעל כדי שהדברים ימשיכו לרוץ חלק.</p>
             <div class="tl-tags">
               <span class="tag tag-sm">DevOps</span>
               <span class="tag tag-sm">CI/CD</span>
@@ -775,10 +785,10 @@
     <div class="container">
       <div class="section-label" data-en>Talks &amp; Presentations</div>
       <div class="section-label" data-he>הרצאות ומצגות</div>
-      <h2 class="section-title" data-en>Knowledge I share</h2>
-      <h2 class="section-title" data-he>ידע שאני משתף</h2>
-      <p class="section-sub" data-en>Research-backed presentations on offensive security, AI, and the future of cyber operations.</p>
-      <p class="section-sub" data-he>מצגות מבוססות מחקר על אבטחה התקפית, AI ועתיד מבצעי הסייבר.</p>
+      <h2 class="section-title" data-en>Talks I've given</h2>
+      <h2 class="section-title" data-he>הרצאות שנתתי</h2>
+      <p class="section-sub" data-en>Presentations on offensive security and AI — with downloadable slides.</p>
+      <p class="section-sub" data-he>מצגות על אבטחה התקפית ו-AI — עם שקופיות להורדה.</p>
 
       <div class="pres-grid">
         <div class="pres-card reveal-card">
@@ -793,8 +803,8 @@
           <div class="pres-body">
             <h3 class="pres-title" data-en>AI-Powered Reconnaissance</h3>
             <h3 class="pres-title" data-he>סיור מודיעיני מבוסס AI</h3>
-            <p class="pres-desc" data-en>How to turn days of manual intelligence gathering into minutes of critical, automated insights using autonomous AI agents.</p>
-            <p class="pres-desc" data-he>כיצד להפוך ימים של איסוף מודיעין ידני לדקות של תובנות קריטיות ואוטומטיות באמצעות סוכני AI אוטונומיים.</p>
+            <p class="pres-desc" data-en>Using AI agents to automate reconnaissance — turning hours of manual OSINT work into minutes of structured output.</p>
+            <p class="pres-desc" data-he>שימוש בסוכני AI לאוטומציה של סיור מודיעיני — הפיכת שעות של עבודת OSINT ידנית לדקות של פלט מובנה.</p>
             <div class="pres-meta">
               <span class="pres-slides" data-en>10 slides</span>
               <span class="pres-slides" data-he>10 שקופיות</span>
@@ -820,20 +830,20 @@
     <div class="container">
       <div class="section-label" data-en>Contact</div>
       <div class="section-label" data-he>צור קשר</div>
-      <h2 class="section-title" data-en>Let's work together</h2>
-      <h2 class="section-title" data-he>בואו נעבוד יחד</h2>
-      <p class="section-sub" data-en>Available for consulting engagements, red team operations, AI projects, and speaking opportunities.</p>
-      <p class="section-sub" data-he>זמין להתקשרויות ייעוץ, מבצעי Red Team, פרויקטי AI והרצאות.</p>
+      <h2 class="section-title" data-en>Get in touch</h2>
+      <h2 class="section-title" data-he>יצירת קשר</h2>
+      <p class="section-sub" data-en>Have a project in mind? Drop me a line.</p>
+      <p class="section-sub" data-he>יש פרויקט בראש? שלחו הודעה.</p>
 
       <div class="contact-grid">
-        <a href="mailto:OriAshkenazi@cyberautomationai.cloud" class="contact-card">
+        <a href="mailto:oriashkenazi@ashcyber.tech" class="contact-card">
           <div class="contact-card-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </div>
           <div class="contact-card-body">
             <div class="contact-card-label" data-en>Email</div>
             <div class="contact-card-label" data-he>אימייל</div>
-            <div class="contact-card-val">OriAshkenazi@cyberautomationai.cloud</div>
+            <div class="contact-card-val">oriashkenazi@ashcyber.tech</div>
           </div>
         </a>
 
@@ -867,13 +877,13 @@
       <div class="footer-brand">
         <span class="footer-name">Ori Ashkenazi</span>
       </div>
-      <p class="footer-copy" data-en>© 2026 Ori Ashkenazi · Cybersecurity &amp; AI Consultant</p>
-      <p class="footer-copy" data-he>© 2026 אורי אשכנזי · יועץ סייבר ובינה מלאכותית</p>
+      <p class="footer-copy" data-en>© 2026 Ori Ashkenazi · Development · AI · Security</p>
+      <p class="footer-copy" data-he>© 2026 אורי אשכנזי · פיתוח · AI · אבטחה</p>
       <div class="footer-links">
         <a href="https://linkedin.com/in/oria" target="_blank" class="footer-link">LinkedIn</a>
         <a href="https://github.com/TarzEH" target="_blank" class="footer-link">GitHub</a>
-        <a href="mailto:OriAshkenazi@cyberautomationai.cloud" class="footer-link" data-en>Email</a>
-        <a href="mailto:OriAshkenazi@cyberautomationai.cloud" class="footer-link" data-he>אימייל</a>
+        <a href="mailto:oriashkenazi@ashcyber.tech" class="footer-link" data-en>Email</a>
+        <a href="mailto:oriashkenazi@ashcyber.tech" class="footer-link" data-he>אימייל</a>
       </div>
     </div>
   </footer>
