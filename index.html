@@ -63,6 +63,8 @@
     html[dir="rtl"] .project-card { text-align: right; }
     html[dir="rtl"] .project-meta { flex-direction: row-reverse; }
     html[dir="rtl"] .projects-more { text-align: center; }
+    html[dir="rtl"] .article-card { text-align: right; }
+    html[dir="rtl"] .article-tags { justify-content: flex-end; }
 
     /* ── Scroll-reveal animation ── */
     .reveal-card {
@@ -74,12 +76,12 @@
       opacity: 1;
       transform: translateY(0);
     }
-    .service-card, .project-card, .tl-item, .cert-card {
+    .service-card, .project-card, .tl-item, .cert-card, .article-card {
       opacity: 0;
       transform: translateY(32px);
       transition: opacity 0.55s cubic-bezier(0.22,1,0.36,1), transform 0.55s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s;
     }
-    .service-card.visible, .project-card.visible, .tl-item.visible, .cert-card.visible {
+    .service-card.visible, .project-card.visible, .tl-item.visible, .cert-card.visible, .article-card.visible {
       opacity: 1;
       transform: translateY(0);
     }
@@ -344,6 +346,8 @@
         <a href="#skills"     class="nav-link" data-he>כישורים</a>
         <a href="#presentations" class="nav-link" data-en>Talks</a>
         <a href="#presentations" class="nav-link" data-he>הרצאות</a>
+        <a href="#articles" class="nav-link" data-en>Articles</a>
+        <a href="#articles" class="nav-link" data-he>מאמרים</a>
         <a href="#contact"    class="nav-cta"  data-en>Let's Talk</a>
         <a href="#contact"    class="nav-cta"  data-he>דברו איתי</a>
         <button class="lang-toggle" id="lang-btn" aria-label="Switch language">🌐 עברית</button>
@@ -1002,6 +1006,44 @@
     </div>
   </section>
 
+  <!-- ARTICLES -->
+  <section class="section" id="articles">
+    <div class="container">
+      <div class="section-label" data-en>Articles &amp; Writing</div>
+      <div class="section-label" data-he>מאמרים וכתיבה</div>
+      <h2 class="section-title" data-en>Things I've written</h2>
+      <h2 class="section-title" data-he>דברים שכתבתי</h2>
+      <p class="section-sub" data-en>Deep dives into security research, AI automation, and offensive tooling.</p>
+      <p class="section-sub" data-he>צלילות עמוקות למחקר אבטחה, אוטומציית AI וכלי תקיפה.</p>
+
+      <div class="articles-grid">
+        <a href="https://medium.com/@oriash94/redweaver-building-an-autonomous-ai-powered-penetration-testing-platform-61209861b88e" target="_blank" rel="noopener" class="article-card">
+          <div class="article-card-body">
+            <div class="article-tags">
+              <span class="article-tag">AI</span>
+              <span class="article-tag" data-en>Offensive Security</span>
+              <span class="article-tag" data-he>אבטחה התקפית</span>
+              <span class="article-tag" data-en>Automation</span>
+              <span class="article-tag" data-he>אוטומציה</span>
+            </div>
+            <h3 class="article-title" data-en>RedWeaver — Building an Autonomous AI-Powered Penetration Testing Platform</h3>
+            <h3 class="article-title" data-he>RedWeaver — בניית פלטפורמה אוטונומית לבדיקות חדירה מבוססת AI</h3>
+            <p class="article-desc" data-en>How I built an AI-driven platform that autonomously plans and executes penetration tests — from reconnaissance to exploitation — using coordinated agents and real offensive tools.</p>
+            <p class="article-desc" data-he>איך בניתי פלטפורמה מונעת AI שמתכננת ומבצעת בדיקות חדירה באופן אוטונומי — מסיור מודיעיני ועד ניצול — באמצעות סוכנים מתואמים וכלי תקיפה אמיתיים.</p>
+            <div class="article-meta">
+              <span class="article-source">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                Medium
+              </span>
+              <span class="article-read" data-en>Read article →</span>
+              <span class="article-read" data-he>קרא מאמר ←</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section class="section section-contact" id="contact">
     <div class="container">
@@ -1240,7 +1282,7 @@
 
     // ── Scroll-reveal for cards ───────────────────────────────────────
     const revealEls = document.querySelectorAll(
-      '.service-card, .project-card, .tl-item, .cert-card, .reveal-card, .contact-card'
+      '.service-card, .project-card, .tl-item, .cert-card, .reveal-card, .contact-card, .article-card'
     );
     const revealObs = new IntersectionObserver((entries) => {
       entries.forEach((e, i) => {
